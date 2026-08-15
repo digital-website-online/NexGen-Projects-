@@ -2,220 +2,2413 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="NexGen Project — Frasat Ahmad. Original digital experiences, websites, UI/UX and web development.">
-<meta name="theme-color" content="#07101c">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexGen Project — Frasat Ahmad | Web Developer &amp; Digital Experience Designer</title>
+<meta name="description" content="NexGen Project is the digital studio of Frasat Ahmad — modern websites, UI/UX and original digital experiences built to look memorable and work smoothly.">
+<meta name="theme-color" content="#05090f">
 <meta name="color-scheme" content="dark">
-<title>NexGen Project — Frasat Ahmad</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="NexGen Project — Frasat Ahmad">
+<meta property="og:description" content="Hi, I'm Frasat Ahmad — I design and build digital experiences. Modern websites, UI/UX and digital experiences by NexGen Project.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305090f'/%3E%3Cpath d='M28 72V28h9l26 30V28h9v44h-9L37 42v30z' fill='%2300d8ff'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#050b14;--bg2:#081321;--panel:#0b1726;--panel2:#102238;--text:#f5f8fc;--muted:#91a4b9;--cyan:#63e6ff;--cyan2:#27c7ef;--purple:#9277ff;--green:#5de5a0;--line:rgba(255,255,255,.1);--max:1240px;--ease:cubic-bezier(.2,.8,.2,1)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:86px}
-body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0,#19345c44,transparent 28%),radial-gradient(circle at 0 35%,#0d6c8340,transparent 24%),var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(to bottom,black,transparent 70%);z-index:-1}
-a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}button{color:inherit}
-.container{width:min(92%,var(--max));margin:auto}
-section{padding:110px 0;position:relative}
-.muted{color:var(--muted)}.eyebrow{color:var(--cyan);font-size:.72rem;font-weight:900;letter-spacing:2.4px;text-transform:uppercase}
-.section-head{max-width:800px}.section-title{font-size:clamp(2.4rem,5vw,5rem);line-height:.98;letter-spacing:-3px;margin-top:10px}.section-text{color:var(--muted);max-width:720px;margin-top:18px}
-.gradient{background:linear-gradient(100deg,var(--cyan),#bbaaff 65%,#fff);background-clip:text;-webkit-background-clip:text;color:transparent}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.visible{opacity:1;transform:none}
-.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+/* ============================================================
+   NEXGEN PROJECT — DESIGN TOKENS
+   ============================================================ */
+:root{
+  --bg:            #05090f;
+  --bg-alt:        #0a1420;
+  --bg-raised:     #0e1a29;
+  --line:          rgba(148,178,204,0.14);
+  --line-strong:   rgba(148,178,204,0.26);
 
-/* NAV */
-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(5,11,20,.48);border-bottom:1px solid transparent;transition:.35s var(--ease)}
-nav.scrolled{background:rgba(7,16,28,.86);backdrop-filter:blur(18px);border-color:var(--line);box-shadow:0 12px 45px #0005}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:1.35rem;font-weight:950;letter-spacing:-.7px}.logo span{color:var(--cyan)}
-.nav-links{display:flex;gap:23px;align-items:center;list-style:none;color:var(--muted);font-size:.87rem}.nav-links a{position:relative;padding:8px 0;transition:.2s}.nav-links a:after{content:"";position:absolute;left:0;bottom:1px;width:0;height:2px;background:var(--cyan);transition:.25s}.nav-links a:hover,.nav-links a.active{color:#fff}.nav-links a:hover:after,.nav-links a.active:after{width:100%}
-.nav-contact{padding:10px 15px!important;border:1px solid var(--line);border-radius:10px}.nav-contact:after{display:none}.menu{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:#ffffff08;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}.menu span{display:block;width:21px;height:2px;border-radius:9px;background:#fff;transition:.35s var(--ease)}.menu.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu.open span:nth-child(2){opacity:0;transform:scaleX(0)}.menu.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  --text:          #eaf3fb;
+  --text-dim:      #9fb2c4;
+  --text-faint:    #5d7089;
 
-/* PROGRESS */
-.progress{position:fixed;top:0;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:2000}
+  --cyan:          #00d8ff;
+  --cyan-dim:      #0aa8cc;
+  --blue:          #4f7cff;
+  --violet:        #7c6cff;
 
-/* HERO */
-.hero{min-height:100vh;padding:150px 0 80px;display:flex;align-items:center;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
-.hero-kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:#ffffff08;padding:8px 13px;border-radius:99px;color:var(--cyan);font-size:.75rem;margin-bottom:24px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}
-h1{font-size:clamp(3.5rem,8vw,7.2rem);line-height:.88;letter-spacing:-6px;max-width:850px}.hero-copy{font-size:1.08rem;color:var(--muted);max-width:680px;margin:28px 0 30px}.actions{display:flex;gap:11px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:13px 18px;font-weight:850;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s,border-color .2s;background:#ffffff08}.btn:hover{transform:translateY(-3px);border-color:#63e6ff55;box-shadow:0 12px 35px #0005}.btn:active{transform:translateY(0) scale(.97)}.btn-primary{background:#fff;color:#07101c}.btn-cyan{background:var(--cyan);color:#06111b;border-color:transparent}
-.hero-stage{position:relative;min-height:540px;display:grid;place-items:center}.orb{position:absolute;border-radius:50%;filter:blur(2px);animation:float 7s ease-in-out infinite}.orb.a{width:220px;height:220px;background:#63e6ff20;top:5%;right:10%}.orb.b{width:170px;height:170px;background:#9277ff20;bottom:10%;left:2%;animation-delay:-2s}.orb.c{width:80px;height:80px;background:#63e6ff25;top:42%;left:20%;animation-delay:-4s}
-@keyframes float{50%{transform:translate3d(0,-22px,0) scale(1.04)}}
-.experience{position:relative;width:min(100%,510px);min-height:455px;padding:20px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#ffffff10,#ffffff03);box-shadow:0 35px 100px #0008;transform:rotate(1.5deg);transition:.5s var(--ease);z-index:2}.experience:hover{transform:rotate(0) translateY(-5px)}
-.window{height:100%;min-height:410px;border:1px solid var(--line);border-radius:20px;background:#071321;overflow:hidden}.window-bar{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 14px;gap:7px}.window-bar i{width:8px;height:8px;border-radius:50%;background:#637386}.window-content{padding:26px}.mini-label{font-size:.68rem;color:var(--cyan);letter-spacing:2px;font-weight:900}.window-content h2{font-size:3rem;line-height:.95;margin:60px 0 16px}.fake-line{height:7px;background:#1d3047;border-radius:10px;margin:9px 0}.fake-line.w55{width:55%}.fake-line.w75{width:75%}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:28px}.mini-card{height:100px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(135deg,#122c43,#0d1b2e);position:relative;overflow:hidden}.mini-card:after{content:"";position:absolute;inset:-50%;background:linear-gradient(120deg,transparent,#63e6ff14,transparent);transform:rotate(25deg);animation:shine 4s linear infinite}@keyframes shine{to{transform:translateX(70%) rotate(25deg)}}
+  --grad-signature: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 55%, var(--violet) 100%);
 
-/* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--line)}.stat{background:#091625;padding:27px;text-align:center}.stat strong{display:block;font-size:2rem}.stat span{color:var(--muted);font-size:.8rem}
+  --font-display:  'Syne', sans-serif;
+  --font-body:     'Plus Jakarta Sans', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
 
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px;align-items:center}.about-art{height:460px;border:1px solid var(--line);border-radius:30px;display:grid;place-items:center;background:radial-gradient(circle at 20% 20%,#63e6ff2b,transparent 27%),radial-gradient(circle at 80% 80%,#9277ff2b,transparent 32%),#091625;position:relative;overflow:hidden}.about-art:before{content:"";position:absolute;width:70%;height:70%;border:1px dashed #63e6ff33;border-radius:50%;animation:spin 20s linear infinite}.about-art:after{content:"";position:absolute;width:45%;height:45%;border:1px solid #9277ff33;border-radius:50%;animation:spin 12s linear infinite reverse}@keyframes spin{to{transform:rotate(360deg)}}.nx{width:160px;height:160px;border-radius:44px;display:grid;place-items:center;font-size:3.3rem;font-weight:950;background:#ffffff09;border:1px solid #ffffff1d;box-shadow:0 30px 80px #0008;z-index:2}.checks{list-style:none;display:grid;gap:10px;margin:25px 0}.checks li:before{content:"✓";color:var(--cyan);font-weight:900;margin-right:10px}
+  --ease:          cubic-bezier(.22,1,.36,1);
+  --ease-soft:     cubic-bezier(.4,0,.2,1);
 
-/* LAB */
-.lab{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 50%,#102e4522,transparent 50%)}.lab-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;align-items:center}.lab-map{min-height:500px;border:1px solid var(--line);border-radius:30px;background:#071321;position:relative;overflow:hidden}.lab-map:before,.lab-map:after{content:"";position:absolute;border:1px solid #63e6ff22;border-radius:50%;inset:15%;animation:pulse 4s ease-in-out infinite}.lab-map:after{inset:30%;animation-delay:-2s}@keyframes pulse{50%{transform:scale(1.08);opacity:.45}}.node{position:absolute;width:64px;height:64px;border-radius:20px;border:1px solid #63e6ff55;background:#0e2337;display:grid;place-items:center;color:var(--cyan);font-weight:900;cursor:pointer;transition:.3s var(--ease);z-index:2}.node:hover{transform:scale(1.12);background:#13304a;box-shadow:0 0 35px #63e6ff25}.node.n1{left:12%;top:16%}.node.n2{right:13%;top:22%}.node.n3{left:38%;top:42%}.node.n4{right:18%;bottom:14%}.node.n5{left:12%;bottom:18%}.lab-line{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#63e6ff55,transparent);transform-origin:left center;z-index:1}.l1{width:42%;left:27%;top:35%;transform:rotate(8deg)}.l2{width:37%;left:48%;top:47%;transform:rotate(-15deg)}.l3{width:38%;left:25%;top:55%;transform:rotate(-35deg)}.l4{width:40%;left:47%;top:59%;transform:rotate(35deg)}
-.lab-output{margin-top:20px;min-height:100px;padding:20px;border:1px solid var(--line);border-radius:16px;background:#ffffff05;color:var(--muted);transition:.3s}.lab-output strong{display:block;color:#fff;margin-bottom:4px}
+  --container:     1240px;
+  --gutter:        clamp(20px, 5vw, 64px);
 
-/* CARDS */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}.card{border:1px solid var(--line);border-radius:21px;background:linear-gradient(145deg,#ffffff09,#ffffff03);padding:27px;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#63e6ff12,transparent 35%);opacity:0;transition:.3s;pointer-events:none}.card:hover{transform:translateY(-8px);border-color:#63e6ff45;box-shadow:0 20px 55px #0006}.card:hover:before{opacity:1}.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#63e6ff12;color:var(--cyan);font-size:20px;margin-bottom:18px}.card p{color:var(--muted);font-size:.9rem;margin-top:8px}.card-action{display:inline-flex;margin-top:18px;color:var(--cyan);font-size:.84rem;font-weight:850}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.filter{border:1px solid var(--line);background:#ffffff06;padding:9px 13px;border-radius:99px;color:var(--muted);cursor:pointer;transition:.2s}.filter.active,.filter:hover{background:#63e6ff14;color:var(--cyan);border-color:#63e6ff55}
+  --radius-s:      10px;
+  --radius-m:      18px;
+  --radius-l:      28px;
+}
 
-/* PROJECTS */
-.project{padding:0;cursor:pointer}.project.hidden{display:none}.preview{height:205px;padding:20px;display:flex;align-items:end;background:linear-gradient(135deg,#0b3445,#231a42)}.browser-screen{width:100%;height:135px;border-radius:12px 12px 0 0;background:#102238;border:1px solid var(--line);padding:14px;position:relative;overflow:hidden}.browser-screen div{height:7px;background:#29435e;border-radius:8px;margin:8px 0}.browser-screen div:last-child{width:52%}.project-body{padding:23px}.tag{color:var(--cyan);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:1.2px}.project-body p{margin:9px 0 15px}.project-body .stack{font-size:.75rem;color:#72869d}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+}
 
-/* PROCESS + WHY */
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}.step{padding:27px;border-left:2px solid #63e6ff55;background:#ffffff05;border-radius:0 18px 18px 0}.step b{color:var(--cyan);font-size:.72rem}.step h3{margin-top:9px}.step p{color:var(--muted);font-size:.88rem;margin-top:5px}.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:transparent;
+}
 
-/* FAQ */
-.faq{max-width:900px;margin-top:42px}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;text-align:left;background:none;border:0;padding:21px 0;font-weight:800;cursor:pointer}.faq-q span:last-child{color:var(--cyan);font-size:1.4rem;transition:.3s}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}.faq-a{display:grid;grid-template-rows:0fr;transition:.35s var(--ease)}.faq-a>div{overflow:hidden;color:var(--muted)}.faq-item.open .faq-a{grid-template-rows:1fr}.faq-a>div{padding-bottom:0}.faq-item.open .faq-a>div{padding-bottom:20px}
+a,button,input,textarea,.project-card,.lab-node,.filter-btn,.service-chip,.faq-q,.stack-chip{
+  -webkit-tap-highlight-color:transparent;
+  outline:none;
+}
 
-/* CONTACT */
-.contact-wrap{padding:55px;border:1px solid var(--line);border-radius:30px;background:radial-gradient(circle at 90% 10%,#9277ff22,transparent 30%),#ffffff07}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;margin-top:38px}.contact-info{display:grid;gap:12px;align-content:start}.contact-item{padding:16px;border:1px solid var(--line);border-radius:14px;background:#0002}.contact-item small{display:block;color:var(--muted);margin-bottom:2px}.form{display:grid;gap:12px}.form input,.form textarea{width:100%;background:#07101caa;color:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 15px;outline:none;transition:.2s}.form input:focus,.form textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #63e6ff0c}.form textarea{min-height:145px;resize:vertical}.form .error{border-color:#ff7184}
+body.no-scroll{overflow:hidden;}
 
-/* FLOATING/FOOTER */
-.whatsapp{position:fixed;right:19px;bottom:19px;z-index:900;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;font-size:24px;box-shadow:0 12px 35px #0007;transition:.25s}.whatsapp:hover{transform:translateY(-5px) scale(1.05)}.top{position:fixed;right:19px;bottom:88px;z-index:900;width:43px;height:43px;border-radius:50%;border:1px solid var(--line);background:#101e30;color:#fff;cursor:pointer;display:none}.top.show{display:grid;place-items:center}footer{padding:55px 0 25px;border-top:1px solid var(--line)}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px}footer p,footer a{color:var(--muted);font-size:.86rem}.footer-links{display:grid;gap:7px}.copyright{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:35px;padding-top:18px;color:var(--muted);font-size:.76rem}
-.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#15263a;border:1px solid var(--line);padding:12px 17px;border-radius:12px;z-index:2000;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
-.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(10px);z-index:1500;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}.modal-box{width:min(900px,100%);max-height:90vh;overflow:auto;border:1px solid var(--line);border-radius:25px;background:#0a1727;padding:32px;transform:translateY(25px) scale(.98);transition:.35s var(--ease)}.modal.open .modal-box{transform:none}.modal-close{float:right;border:1px solid var(--line);background:#ffffff08;border-radius:10px;width:38px;height:38px;cursor:pointer}.modal-box h2{font-size:clamp(2rem,5vw,4rem);line-height:1;margin:28px 0 12px}.modal-meta{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.modal-meta span{padding:7px 10px;border:1px solid var(--line);border-radius:99px;color:var(--cyan);font-size:.75rem}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button,input,textarea,select{font:inherit;color:inherit;background:none;border:none;}
+button{cursor:pointer;}
 
-/* MOBILE */
-@media(max-width:950px){.hero-grid,.about-grid,.lab-grid,.contact-grid{grid-template-columns:1fr}.hero-stage{min-height:470px}.grid3,.process{grid-template-columns:repeat(2,1fr)}.why{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){
- section{padding:78px 0}.nav-links{display:none;position:absolute;top:72px;left:4%;width:92%;padding:20px;flex-direction:column;align-items:stretch;background:#0b1726f5;border:1px solid var(--line);border-radius:18px;box-shadow:0 25px 60px #0008;transform:translateY(-10px);opacity:0;pointer-events:none;transition:.3s var(--ease)}.nav-links.open{display:flex;transform:none;opacity:1;pointer-events:auto}.menu{display:flex}h1{letter-spacing:-4px}.section-title{letter-spacing:-2px}.hero{padding-top:125px}.experience{transform:none}.grid3,.process,.why{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.contact-wrap{padding:28px}.footer-grid{grid-template-columns:1fr}.copyright{flex-direction:column}.lab-map{min-height:390px}.node{width:54px;height:54px}.custom-cursor{display:none}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
-/* Prevent browser tap flash while retaining keyboard focus styles */
-a,button{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+::selection{background:var(--cyan);color:#05090f;}
+
+/* Visible keyboard focus */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.wrap{
+  max-width:var(--container);
+  margin:0 auto;
+  padding-inline:var(--gutter);
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--cyan);
+}
+.eyebrow::before{
+  content:'';
+  width:7px;height:7px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 12px 2px var(--cyan);
+}
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-0.01em;
+}
+
+.section{
+  position:relative;
+  padding:clamp(80px,12vw,150px) 0;
+}
+.section-head{
+  max-width:640px;
+  margin-bottom:clamp(40px,6vw,72px);
+}
+.section-head h2{
+  font-size:clamp(30px,4.4vw,52px);
+  margin-top:14px;
+}
+.section-head p{
+  color:var(--text-dim);
+  font-size:17px;
+  margin-top:16px;
+  max-width:520px;
+}
+.section-divider{
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--line-strong), transparent);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:15px 28px;
+  border-radius:999px;
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:14.5px;
+  letter-spacing:.01em;
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease), background .3s var(--ease-soft), border-color .3s;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--grad-signature);
+  color:#04070c;
+  box-shadow:0 0 0 0 rgba(0,216,255,.0);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px -10px rgba(0,216,255,.45);
+}
+.btn-ghost{
+  border:1px solid var(--line-strong);
+  color:var(--text);
+  background:rgba(255,255,255,.02);
+}
+.btn-ghost:hover{
+  border-color:var(--cyan);
+  background:rgba(0,216,255,.06);
+  transform:translateY(-2px);
+}
+.btn svg{width:16px;height:16px;flex-shrink:0;transition:transform .35s var(--ease);}
+.btn:hover svg{transform:translate(3px,-3px);}
+
+/* Scroll reveal base */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reveal.is-visible{opacity:1;transform:none;}
+.reveal-stagger > *{transition-delay:calc(var(--i,0) * 80ms);}
+
+/* ============================================================
+   LOADER
+   ============================================================ */
+#loader{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:18px;
+  transition:opacity .7s var(--ease-soft), visibility .7s;
+}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.loader-mark{
+  font-family:var(--font-display);
+  font-size:clamp(28px,6vw,44px);
+  font-weight:700;
+  letter-spacing:.06em;
+  color:var(--text);
+  display:flex;
+  overflow:hidden;
+}
+.loader-mark span{
+  display:inline-block;
+  transform:translateY(110%);
+  animation:loaderLetter .7s var(--ease) forwards;
+}
+@keyframes loaderLetter{to{transform:translateY(0);}}
+.loader-bar{
+  width:160px;height:2px;
+  background:var(--line);
+  border-radius:2px;
+  overflow:hidden;
+}
+.loader-bar::after{
+  content:'';display:block;height:100%;width:0%;
+  background:var(--grad-signature);
+  animation:loaderFill 1.1s .5s var(--ease-soft) forwards;
+}
+@keyframes loaderFill{to{width:100%;}}
+
+/* ============================================================
+   CUSTOM CURSOR (desktop only)
+   ============================================================ */
+.cursor-dot,.cursor-ring{
+  position:fixed;top:0;left:0;
+  pointer-events:none;z-index:9998;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  will-change:transform;
+}
+.cursor-dot{width:6px;height:6px;background:var(--cyan);}
+.cursor-ring{
+  width:34px;height:34px;
+  border:1px solid var(--line-strong);
+  transition:width .25s var(--ease-soft),height .25s var(--ease-soft),border-color .25s;
+}
+.cursor-ring.active{width:56px;height:56px;border-color:var(--cyan);}
+@media (hover:none), (pointer:coarse){
+  .cursor-dot,.cursor-ring{display:none;}
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+#site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:22px 0;
+  transition:padding .4s var(--ease-soft), background .4s var(--ease-soft), border-color .4s;
+  border-bottom:1px solid transparent;
+}
+#site-nav.scrolled{
+  padding:14px 0;
+  background:rgba(5,9,15,.72);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--line);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em;
+}
+.nav-logo-mark{
+  width:32px;height:32px;border-radius:9px;
+  background:var(--grad-signature);
+  display:flex;align-items:center;justify-content:center;
+  color:#04070c;font-weight:700;font-size:14px;
+  flex-shrink:0;
+}
+.nav-links{
+  display:flex;align-items:center;gap:2px;
+  list-style:none;
+}
+.nav-links a{
+  position:relative;
+  padding:9px 16px;
+  font-size:14px;font-weight:500;color:var(--text-dim);
+  transition:color .3s;
+  border-radius:999px;
+}
+.nav-links a:hover{color:var(--text);}
+.nav-links a.active{color:var(--text);}
+.nav-links a.active::after{
+  content:'';
+  position:absolute;left:16px;right:16px;bottom:3px;
+  height:1.5px;background:var(--grad-signature);
+  border-radius:2px;
+}
+.nav-cta{display:flex;align-items:center;gap:14px;}
+.nav-cta .btn{padding:11px 20px;font-size:13.5px;}
+
+.nav-toggle{
+  display:none;
+  width:44px;height:44px;
+  align-items:center;justify-content:center;
+  position:fixed;top:16px;right:var(--gutter);
+  z-index:1300;
+  border-radius:50%;
+  border:1px solid transparent;
+  transition:border-color .35s var(--ease-soft), background .35s var(--ease-soft);
+}
+.nav-toggle.active{
+  border-color:var(--line-strong);
+  background:rgba(5,9,15,.6);
+  backdrop-filter:blur(10px);
+}
+.nav-toggle span{
+  position:absolute;left:12px;right:12px;height:1.5px;
+  background:var(--text);
+  border-radius:2px;
+  transition:transform .45s var(--ease), opacity .25s var(--ease-soft), top .45s var(--ease), width .45s var(--ease);
+}
+.nav-toggle span:nth-child(1){top:16px;}
+.nav-toggle span:nth-child(2){top:22px;}
+.nav-toggle span:nth-child(3){top:28px;}
+.nav-toggle.active span:nth-child(1){top:22px;transform:rotate(45deg);}
+.nav-toggle.active span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-toggle.active span:nth-child(3){top:22px;transform:rotate(-45deg);}
+
+.mobile-menu{
+  position:fixed;inset:0;z-index:1100;
+  background:var(--bg-alt);
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:80px var(--gutter);
+  transform:translateY(-100%);
+  opacity:0;
+  transition:transform .55s var(--ease), opacity .4s;
+  pointer-events:none;
+}
+.mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+.mobile-menu ul{display:flex;flex-direction:column;gap:6px;}
+.mobile-menu a{
+  font-family:var(--font-display);font-size:clamp(28px,8vw,44px);font-weight:600;
+  color:var(--text-dim);padding:10px 0;display:block;
+  transition:color .3s;
+}
+.mobile-menu a:hover,.mobile-menu a:focus-visible{color:var(--text);}
+.mobile-menu-footer{
+  margin-top:48px;display:flex;flex-direction:column;gap:10px;
+  color:var(--text-faint);font-family:var(--font-mono);font-size:13px;
+}
+
+@media (max-width:880px){
+  .nav-links,.nav-cta .btn-ghost{display:none;}
+  .nav-cta .btn-primary{display:none;}
+  .nav-toggle{display:flex;}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#home{
+  position:relative;
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:120px;padding-bottom:60px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(60% 50% at 80% 10%, rgba(0,216,255,.14), transparent 60%),
+    radial-gradient(50% 40% at 10% 90%, rgba(124,108,255,.12), transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:-1;
+  background-image:
+    linear-gradient(rgba(148,178,204,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,178,204,.05) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(60% 60% at 50% 30%, black, transparent 90%);
+}
+.hero-status{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px 8px 10px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;
+  color:var(--text-dim);
+  width:fit-content;
+  margin-bottom:28px;
+}
+.hero-status .dot{
+  width:7px;height:7px;border-radius:50%;background:#43e696;
+  box-shadow:0 0 10px 2px rgba(67,230,150,.6);
+  animation:pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+.hero-headline{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(40px,7.4vw,96px);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  max-width:16ch;
+}
+.hero-headline .line{
+  display:block;
+  overflow:hidden;
+}
+.hero-headline .line span{
+  display:inline-block;
+  transform:translateY(115%);
+  animation:heroLine 1s var(--ease) forwards;
+}
+@keyframes heroLine{to{transform:translateY(0);}}
+.hero-headline .accent{
+  background:var(--grad-signature);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+.hero-sub{
+  margin-top:26px;
+  max-width:44ch;
+  font-size:clamp(16px,1.6vw,19px);
+  color:var(--text-dim);
+}
+.hero-sub b{color:var(--text);font-weight:600;}
+
+.hero-actions{
+  margin-top:38px;
+  display:flex;flex-wrap:wrap;gap:14px;
+}
+
+.hero-stats{
+  margin-top:clamp(56px,8vw,88px);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+}
+.hero-stat{
+  padding:22px 20px 0 0;
+  border-right:1px solid var(--line);
+}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .num{
+  font-family:var(--font-display);font-size:clamp(22px,3vw,32px);font-weight:600;
+  color:var(--text);
+}
+.hero-stat .label{
+  margin-top:6px;font-size:12.5px;color:var(--text-faint);
+  font-family:var(--font-mono);letter-spacing:.03em;
+}
+@media (max-width:720px){
+  .hero-stats{grid-template-columns:repeat(2,1fr);row-gap:22px;}
+  .hero-stat:nth-child(2){border-right:none;}
+}
+
+.hero-scroll-cue{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--text-faint);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;
+}
+.hero-scroll-cue .line{
+  width:1px;height:34px;
+  background:linear-gradient(var(--cyan), transparent);
+  animation:scrollCue 1.8s ease-in-out infinite;
+}
+@keyframes scrollCue{0%{opacity:0;transform:scaleY(.3);transform-origin:top;}40%{opacity:1;transform:scaleY(1);transform-origin:top;}100%{opacity:0;transform:scaleY(1);transform-origin:bottom;}}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:20px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.marquee-track{
+  display:inline-flex;
+  gap:52px;
+  animation:marqueeScroll 32s linear infinite;
+}
+@keyframes marqueeScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee span{
+  font-family:var(--font-mono);
+  font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-faint);
+  display:inline-flex;align-items:center;gap:52px;
+}
+.marquee span i{color:var(--cyan);font-style:normal;}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+#about{background:var(--bg-alt);}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,80px);
+  align-items:start;
+}
+.about-copy p{
+  color:var(--text-dim);
+  font-size:16.5px;
+  margin-top:16px;
+}
+.about-copy p:first-child{margin-top:0;}
+.about-copy strong{color:var(--text);font-weight:600;}
+
+.timeline{margin-top:36px;display:flex;flex-direction:column;}
+.timeline-item{
+  display:grid;grid-template-columns:90px 1fr;
+  gap:20px;
+  padding:18px 0;
+  border-top:1px solid var(--line);
+}
+.timeline-item:last-child{border-bottom:1px solid var(--line);}
+.timeline-item .year{
+  font-family:var(--font-mono);font-size:13px;color:var(--cyan);padding-top:2px;
+}
+.timeline-item h4{font-size:16px;font-weight:600;}
+.timeline-item p{color:var(--text-dim);font-size:14.5px;margin-top:6px;}
+
+.about-panel{
+  border:1px solid var(--line);
+  border-radius:var(--radius-l);
+  padding:clamp(28px,3vw,40px);
+  background:linear-gradient(160deg, rgba(0,216,255,.05), rgba(124,108,255,.03));
+  position:sticky;top:120px;
+}
+.about-panel h3{font-size:20px;margin-bottom:22px;}
+.driver-list{display:flex;flex-direction:column;gap:18px;}
+.driver-item{display:flex;gap:14px;align-items:flex-start;}
+.driver-icon{
+  width:38px;height:38px;flex-shrink:0;
+  border-radius:10px;
+  background:rgba(0,216,255,.08);
+  border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--cyan);font-size:16px;
+}
+.driver-item h5{font-size:15px;font-weight:600;}
+.driver-item p{font-size:13.5px;color:var(--text-dim);margin-top:3px;}
+
+@media (max-width:900px){
+  .about-grid{grid-template-columns:1fr;}
+  .about-panel{position:static;}
+}
+
+/* ============================================================
+   SIGNATURE STATEMENT
+   ============================================================ */
+#signature{
+  padding:clamp(100px,16vw,180px) 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.signature-canvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  z-index:-1;
+  opacity:.75;
+}
+.signature-glow{
+  position:absolute;top:50%;left:50%;
+  width:900px;height:900px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(0,216,255,.09), transparent 65%);
+  z-index:-1;
+  pointer-events:none;
+}
+.signature-text{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(32px,6.6vw,86px);
+  line-height:1.06;
+  letter-spacing:-0.02em;
+  max-width:18ch;
+  margin:0 auto;
+}
+.signature-text .dim{color:var(--text-faint);}
+.signature-text .bright{
+  background:var(--grad-signature);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.signature-tag{
+  margin-top:26px;
+  font-family:var(--font-mono);
+  font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-faint);
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:var(--radius-l);
+  overflow:hidden;
+}
+.service-card{
+  background:var(--bg);
+  padding:36px 30px;
+  transition:background .4s var(--ease-soft);
+  position:relative;
+}
+.service-card:hover{background:var(--bg-raised);}
+.service-icon{
+  width:46px;height:46px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;color:var(--cyan);
+  background:rgba(0,216,255,.07);
+  border:1px solid var(--line-strong);
+  transition:transform .5s var(--ease), background .4s;
+}
+.service-card:hover .service-icon{
+  transform:translateY(-4px) rotate(-6deg);
+  background:rgba(0,216,255,.14);
+}
+.service-card h3{font-size:19px;margin-top:22px;font-weight:600;}
+.service-card p{color:var(--text-dim);font-size:14.5px;margin-top:10px;min-height:44px;}
+.service-link{
+  margin-top:20px;
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13.5px;font-weight:600;color:var(--text);
+  padding-bottom:2px;border-bottom:1px solid transparent;
+  transition:border-color .3s, color .3s, gap .3s;
+}
+.service-card:hover .service-link{border-color:var(--cyan);color:var(--cyan);gap:11px;}
+.service-link svg{width:13px;height:13px;}
+
+@media (max-width:900px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+  .services-grid{grid-template-columns:1fr;}
+}
+
+/* ============================================================
+   TECH STACK
+   ============================================================ */
+#stack{background:var(--bg-alt);}
+.stack-row{
+  display:flex;flex-wrap:wrap;
+  gap:12px;
+  margin-top:8px;
+}
+.stack-chip{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-family:var(--font-mono);
+  font-size:13.5px;
+  color:var(--text-dim);
+  transition:border-color .35s, color .35s, transform .35s var(--ease);
+  cursor:default;
+}
+.stack-chip:hover{
+  border-color:var(--cyan);
+  color:var(--text);
+  transform:translateY(-3px);
+}
+.stack-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-bottom:40px;
+}
+.filter-btn{
+  padding:9px 20px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:13.5px;font-weight:500;color:var(--text-dim);
+  transition:all .3s var(--ease-soft);
+}
+.filter-btn:hover{color:var(--text);border-color:var(--line-strong);}
+.filter-btn.active{
+  background:var(--grad-signature);
+  color:#04070c;font-weight:600;
+  border-color:transparent;
+}
+
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.project-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius-m);
+  overflow:hidden;
+  background:var(--bg-alt);
+  cursor:pointer;
+  transition:transform .5s var(--ease), border-color .4s;
+  display:flex;flex-direction:column;
+}
+.project-card:hover{transform:translateY(-6px);border-color:var(--line-strong);}
+.project-media{
+  aspect-ratio:4/3;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(0,216,255,.18), transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(124,108,255,.16), transparent 55%),
+    var(--bg-raised);
+  display:flex;align-items:center;justify-content:center;
+}
+.project-media .glyph{
+  font-family:var(--font-display);font-size:52px;font-weight:700;
+  color:rgba(234,243,251,.08);
+  transition:transform .6s var(--ease), color .4s;
+}
+.project-card:hover .project-media .glyph{transform:scale(1.12);color:rgba(0,216,255,.16);}
+.project-cat{
+  position:absolute;top:14px;left:14px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(5,9,15,.6);
+  backdrop-filter:blur(6px);
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--cyan);
+  border:1px solid rgba(0,216,255,.25);
+}
+.project-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;}
+.project-body h3{font-size:18px;font-weight:600;}
+.project-body p{color:var(--text-dim);font-size:14px;margin-top:8px;flex:1;}
+.project-tech{
+  margin-top:16px;
+  font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);
+  letter-spacing:.02em;
+}
+.project-view{
+  margin-top:14px;
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--text);
+}
+.project-view svg{width:13px;height:13px;transition:transform .35s var(--ease);}
+.project-card:hover .project-view svg{transform:translate(3px,-3px);}
+
+@media (max-width:960px){.projects-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:640px){.projects-grid{grid-template-columns:1fr;}}
+
+/* Project modal */
+.project-modal{
+  position:fixed;inset:0;z-index:1300;
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+  opacity:0;visibility:hidden;
+  transition:opacity .4s var(--ease-soft), visibility .4s;
+}
+.project-modal.open{opacity:1;visibility:visible;}
+.project-modal-backdrop{
+  position:absolute;inset:0;
+  background:rgba(5,9,15,.82);
+  backdrop-filter:blur(10px);
+}
+.project-modal-panel{
+  position:relative;
+  width:100%;max-width:760px;
+  max-height:88vh;overflow-y:auto;
+  background:var(--bg-alt);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius-l);
+  padding:clamp(28px,4vw,48px);
+  transform:translateY(24px) scale(.98);
+  transition:transform .45s var(--ease);
+}
+.project-modal.open .project-modal-panel{transform:translateY(0) scale(1);}
+.project-modal-close{
+  position:absolute;top:20px;right:20px;
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-dim);
+  transition:all .3s;
+}
+.project-modal-close:hover{color:var(--text);border-color:var(--cyan);transform:rotate(90deg);}
+.project-modal-cat{color:var(--cyan);}
+.project-modal-panel h3{font-size:clamp(24px,3vw,32px);margin-top:10px;}
+.project-modal-media{
+  margin-top:24px;aspect-ratio:16/9;border-radius:var(--radius-m);
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(0,216,255,.16), transparent 55%),
+    radial-gradient(100% 100% at 100% 100%, rgba(124,108,255,.14), transparent 55%),
+    var(--bg-raised);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:44px;font-weight:700;color:rgba(234,243,251,.1);
+}
+.modal-meta-grid{
+  margin-top:28px;
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;
+}
+.modal-meta-block h5{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-faint);margin-bottom:8px;
+}
+.modal-meta-block p{color:var(--text-dim);font-size:14.5px;}
+.modal-meta-block.full{grid-column:1/-1;}
+.modal-tech-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.modal-tech-tags span{
+  padding:5px 12px;border:1px solid var(--line);border-radius:999px;
+  font-family:var(--font-mono);font-size:12px;color:var(--text-dim);
+}
+.modal-actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+@media (max-width:560px){.modal-meta-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   NEXGEN LAB
+   ============================================================ */
+#lab{background:var(--bg-alt);position:relative;overflow:hidden;}
+.lab-intro{max-width:640px;}
+.lab-stage{
+  margin-top:56px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+}
+.lab-canvas{
+  position:relative;
+  aspect-ratio:1/1;
+  max-width:520px;
+  margin:0 auto;
+}
+.lab-canvas svg{width:100%;height:100%;}
+.lab-node{
+  cursor:pointer;
+  transition:transform .35s var(--ease);
+  transform-origin:center;
+  transform-box:fill-box;
+}
+.lab-node:hover,.lab-node.active{transform:scale(1.18);}
+.lab-node circle.core{fill:var(--bg-alt);stroke:var(--line-strong);stroke-width:1.5;transition:stroke .35s,fill .35s;}
+.lab-node.active circle.core,.lab-node:hover circle.core{stroke:var(--cyan);fill:rgba(0,216,255,.12);}
+.lab-node text{
+  font-family:var(--font-mono);font-size:11px;fill:var(--text-dim);
+  transition:fill .35s;
+}
+.lab-node.active text,.lab-node:hover text{fill:var(--cyan);}
+.lab-link{stroke:var(--line);stroke-width:1;transition:stroke .35s, stroke-width .35s;}
+.lab-link.active{stroke:var(--cyan);stroke-width:1.4;}
+
+.lab-panel{
+  border:1px solid var(--line);
+  border-radius:var(--radius-l);
+  padding:clamp(26px,3vw,38px);
+  background:linear-gradient(160deg, rgba(0,216,255,.05), transparent);
+  min-height:280px;
+}
+.lab-panel .tag{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cyan);
+}
+.lab-panel h3{font-size:24px;margin-top:12px;}
+.lab-panel p{color:var(--text-dim);margin-top:14px;font-size:15px;}
+.lab-panel .lab-list{margin-top:18px;display:flex;flex-direction:column;gap:8px;}
+.lab-panel .lab-list li{
+  font-size:13.5px;color:var(--text-dim);
+  padding-left:18px;position:relative;
+}
+.lab-panel .lab-list li::before{
+  content:'';position:absolute;left:0;top:8px;width:8px;height:1px;background:var(--cyan);
+}
+@media (max-width:900px){
+  .lab-stage{grid-template-columns:1fr;}
+}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process-list{
+  display:flex;flex-direction:column;
+}
+.process-item{
+  display:grid;
+  grid-template-columns:100px 1fr 40px;
+  align-items:center;
+  gap:24px;
+  padding:28px 0;
+  border-top:1px solid var(--line);
+  transition:padding-left .4s var(--ease-soft);
+}
+.process-item:last-child{border-bottom:1px solid var(--line);}
+.process-item:hover{padding-left:10px;}
+.process-num{
+  font-family:var(--font-mono);font-size:13px;color:var(--text-faint);
+  letter-spacing:.05em;
+}
+.process-item.active .process-num{color:var(--cyan);}
+.process-body h3{font-size:clamp(19px,2.4vw,26px);font-weight:600;}
+.process-body p{color:var(--text-dim);font-size:14.5px;margin-top:6px;max-width:56ch;}
+.process-arrow{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-faint);
+  transition:all .4s var(--ease-soft);
+  justify-self:end;
+}
+.process-item.active .process-arrow{border-color:var(--cyan);color:var(--cyan);transform:rotate(45deg);}
+@media (max-width:640px){
+  .process-item{grid-template-columns:50px 1fr;}
+  .process-arrow{display:none;}
+}
+
+/* ============================================================
+   WHY NEXGEN
+   ============================================================ */
+#why{background:var(--bg-alt);}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-l);
+  overflow:hidden;
+}
+.why-card{
+  background:var(--bg-alt);
+  padding:30px 24px;
+  transition:background .4s;
+}
+.why-card:hover{background:var(--bg-raised);}
+.why-card .num{
+  font-family:var(--font-mono);font-size:12px;color:var(--text-faint);
+}
+.why-card h4{font-size:16.5px;margin-top:14px;font-weight:600;}
+.why-card p{font-size:13.5px;color:var(--text-dim);margin-top:8px;}
+@media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.why-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid{display:flex;flex-direction:column;gap:22px;}
+.skill-row{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:24px;}
+.skill-name{font-size:15px;font-weight:600;}
+.skill-name span{display:block;font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--text-faint);margin-top:4px;}
+.skill-track{height:6px;border-radius:999px;background:var(--line);overflow:hidden;}
+.skill-fill{
+  height:100%;border-radius:999px;
+  background:var(--grad-signature);
+  width:0%;
+  transition:width 1.4s var(--ease);
+}
+@media (max-width:640px){.skill-row{grid-template-columns:1fr;gap:10px;}}
+
+/* ============================================================
+   ACHIEVEMENTS
+   ============================================================ */
+#achievements{background:var(--bg-alt);}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-l);overflow:hidden;
+}
+.stat-card{
+  background:var(--bg-alt);
+  padding:32px 24px;text-align:center;
+}
+.stat-card .count{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(30px,4vw,44px);
+  background:var(--grad-signature);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat-card .label{margin-top:8px;font-size:13px;color:var(--text-dim);font-family:var(--font-mono);}
+@media (max-width:800px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.testimonial-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius-m);
+  padding:32px 28px 28px;
+  background:linear-gradient(160deg, rgba(0,216,255,.04), transparent 60%), var(--bg-alt);
+  display:flex;flex-direction:column;
+  position:relative;
+  transition:transform .45s var(--ease), border-color .35s, background .35s;
+}
+.testimonial-card:hover{transform:translateY(-6px);border-color:var(--cyan);}
+.testimonial-mark{
+  font-family:var(--font-display);font-size:52px;font-weight:700;line-height:1;
+  color:rgba(0,216,255,.18);
+  margin-bottom:4px;
+}
+.testimonial-stars{color:var(--cyan);font-size:13px;letter-spacing:2px;}
+.testimonial-quote{
+  margin-top:12px;color:var(--text);font-size:15px;line-height:1.7;flex:1;
+}
+.testimonial-foot{
+  margin-top:22px;display:flex;align-items:center;gap:12px;
+  padding-top:18px;border-top:1px solid var(--line);
+}
+.testimonial-avatar{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:var(--grad-signature);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-weight:700;font-size:15px;color:#04070c;
+}
+.testimonial-name{font-size:13.5px;font-weight:600;color:var(--text);}
+.testimonial-role{font-size:12px;color:var(--text-faint);margin-top:2px;}
+@media (max-width:900px){.testimonials-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:600px){.testimonials-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-list{border-top:1px solid var(--line);}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:24px 4px;
+  text-align:left;
+  font-size:clamp(16px,1.8vw,18px);font-weight:600;
+  color:var(--text);
+}
+.faq-q .plus{
+  width:28px;height:28px;flex-shrink:0;position:relative;
+}
+.faq-q .plus::before,.faq-q .plus::after{
+  content:'';position:absolute;top:50%;left:50%;
+  background:var(--text-dim);
+  transition:transform .4s var(--ease), background .3s;
+}
+.faq-q .plus::before{width:14px;height:1.5px;transform:translate(-50%,-50%);}
+.faq-q .plus::after{width:1.5px;height:14px;transform:translate(-50%,-50%);}
+.faq-item.open .faq-q .plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0;}
+.faq-item.open .faq-q .plus::before{background:var(--cyan);}
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .5s var(--ease);
+}
+.faq-a-inner{padding:0 4px 24px;color:var(--text-dim);font-size:14.5px;max-width:70ch;}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+#contact{background:var(--bg-alt);}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(40px,6vw,80px);
+}
+.contact-info-card{
+  border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:clamp(26px,3vw,36px);
+  background:linear-gradient(160deg, rgba(0,216,255,.05), transparent);
+}
+.contact-row{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 0;border-top:1px solid var(--line);
+}
+.contact-row:first-child{border-top:none;}
+.contact-row .ic{
+  width:42px;height:42px;border-radius:11px;flex-shrink:0;
+  background:rgba(0,216,255,.08);border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;color:var(--cyan);
+}
+.contact-row .lbl{font-family:var(--font-mono);font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;}
+.contact-row .val{font-size:15.5px;font-weight:500;margin-top:3px;}
+.contact-row .val:hover{color:var(--cyan);}
+.contact-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+
+.form-group{margin-bottom:20px;}
+.form-group label{
+  display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--text-faint);margin-bottom:9px;
+}
+.form-control{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-s);
+  background:rgba(255,255,255,.02);
+  color:var(--text);
+  font-size:14.5px;
+  transition:border-color .3s, background .3s;
+}
+.form-control:focus{border-color:var(--cyan);background:rgba(0,216,255,.03);}
+textarea.form-control{resize:vertical;min-height:120px;}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.service-select{display:flex;flex-wrap:wrap;gap:8px;}
+.service-chip{
+  padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+  font-size:13px;color:var(--text-dim);transition:all .3s;
+}
+.service-chip.selected{background:var(--grad-signature);color:#04070c;font-weight:600;border-color:transparent;}
+.form-note{
+  margin-top:16px;font-size:13px;color:var(--text-faint);
+  display:none;
+}
+.form-note.show{display:block;}
+.form-note.ok{color:#43e696;}
+
+@media (max-width:900px){
+  .contact-grid{grid-template-columns:1fr;}
+  .form-row-2{grid-template-columns:1fr;}
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+#final-cta{
+  padding:clamp(90px,14vw,150px) 0;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid var(--line);
+}
+.final-cta-glow{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:1000px;height:500px;
+  background:radial-gradient(ellipse, rgba(79,124,255,.14), transparent 65%);
+  z-index:-1;
+}
+.final-cta-text{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(30px,5.6vw,64px);
+  line-height:1.08;letter-spacing:-.02em;
+  max-width:16ch;margin:0 auto;
+}
+.final-cta-sub{margin-top:20px;color:var(--text-dim);font-size:16px;}
+.final-cta-actions{margin-top:38px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{padding:64px 0 32px;border-top:1px solid var(--line);}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+}
+.footer-brand .nav-logo{margin-bottom:14px;}
+.footer-brand p{color:var(--text-dim);font-size:14px;max-width:32ch;}
+.footer-col h5{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-faint);margin-bottom:16px;
+}
+.footer-col a,.footer-col span{
+  display:block;font-size:14px;color:var(--text-dim);
+  padding:6px 0;transition:color .3s;
+}
+.footer-col a:hover{color:var(--cyan);}
+.footer-bottom{
+  margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  font-size:13px;color:var(--text-faint);
+}
+.back-top{
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s;
+}
+.back-top:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+@media (max-width:800px){
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
-<div class="progress" id="progress"></div>
 
-<nav id="nav">
-<div class="container nav">
-<a class="logo" href="#home">NexGen<span>Project.</span></a>
-<ul class="nav-links" id="navLinks">
-<li><a href="#home" class="active">Home</a></li><li><a href="#about">About</a></li><li><a href="#lab">Lab</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact" class="nav-contact">Contact</a></li>
-</ul>
-<button class="menu" id="menu" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-mark" id="loaderMark"></div>
+  <div class="loader-bar"></div>
 </div>
-</nav>
 
-<header class="hero" id="home">
-<div class="container hero-grid">
-<div class="reveal">
-<div class="hero-kicker"><span class="dot"></span>NexGen Project • Digital experiences</div>
-<h1>Ideas into <span class="gradient">digital reality.</span></h1>
-<p class="hero-copy">I'm <strong>Frasat Ahmad</strong>, founder of <strong>NexGen Project</strong>. I build modern websites, interfaces and original digital experiences designed to look memorable and work smoothly.</p>
-<div class="actions"><a class="btn btn-primary" href="#projects">Explore the work →</a><a class="btn" href="#lab">Enter NexGen Lab</a><a class="btn btn-cyan" target="_blank" href="https://wa.me/923468823902?text=Hello%20Frasat%2C%20I%20want%20to%20start%20a%20NexGen%20Project.">WhatsApp</a></div>
-</div>
-<div class="hero-stage reveal delay-2">
-<div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
-<div class="experience"><div class="window"><div class="window-bar"><i></i><i></i><i></i><span style="margin-left:auto;color:#60748a;font-size:.7rem">NEXGEN.EXPERIENCE</span></div><div class="window-content"><div class="mini-label">NEXGEN / 001</div><h2>Build.<br><span class="gradient">Move.</span></h2><div class="fake-line"></div><div class="fake-line w55"></div><div class="mini-grid"><div class="mini-card"></div><div class="mini-card"></div></div></div></div></div>
-</div>
-</div>
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<header id="site-nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-mark">N</span>
+      NexGenProject.
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#lab">Lab</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/923468823902?text=Hello%20Frasat%2C%20I%20want%20to%20start%20a%20NexGen%20Project." class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#contact" class="btn btn-primary">Start a project</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<section style="padding-top:15px"><div class="container"><div class="stats reveal">
-<div class="stat"><strong>24/7</strong><span>WhatsApp Contact</span></div><div class="stat"><strong>100%</strong><span>Responsive</span></div><div class="stat"><strong>1:1</strong><span>Direct Communication</span></div><div class="stat"><strong>∞</strong><span>Ideas to Explore</span></div>
-</div></div></section>
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-menu-footer">
+    <span>+92 346 8823902</span>
+    <span>contactmenexgenprojects@gmail.com</span>
+  </div>
+</nav>
 
-<section id="about"><div class="container about-grid">
-<div class="about-art reveal"><div class="nx">NX</div></div>
-<div class="reveal delay-1"><div class="eyebrow">About NexGen</div><h2 class="section-title">Not just another developer portfolio.</h2><p class="muted" style="margin-top:20px">NexGen Project is a personal digital studio focused on useful, responsive and memorable web experiences.</p><p class="muted" style="margin-top:14px">Led by Frasat Ahmad, each project starts with the idea, then turns that idea into a clear interface, functional experience and polished final product.</p><ul class="checks"><li>Original responsive web experiences</li><li>Clean UI/UX and interaction design</li><li>Business, portfolio and landing websites</li><li>Performance-focused development</li><li>Direct communication from idea to launch</li></ul><a class="btn btn-primary" href="tel:+923468823902">Talk about an idea →</a></div>
-</div></section>
+<main>
 
-<section class="lab" id="lab"><div class="container lab-grid">
-<div class="reveal"><div class="eyebrow">NexGen Lab / Signature Experience</div><h2 class="section-title">Explore how ideas connect.</h2><p class="section-text">This is the experimental heart of NexGen. Tap a node and discover a part of the digital process.</p><div class="lab-output" id="labOutput"><strong>Choose a node</strong><span>Design, code, experience and projects are connected.</span></div></div>
-<div class="lab-map reveal delay-1">
-<div class="lab-line l1"></div><div class="lab-line l2"></div><div class="lab-line l3"></div><div class="lab-line l4"></div>
-<button class="node n1" data-title="IDEA" data-text="Every NexGen experience starts with a problem, a goal or a raw idea.">01</button>
-<button class="node n2" data-title="DESIGN" data-text="Structure and visual direction turn the idea into an interface people can understand.">02</button>
-<button class="node n3" data-title="CODE" data-text="HTML, CSS and JavaScript bring the interface to life with responsive behavior.">03</button>
-<button class="node n4" data-title="EXPERIENCE" data-text="Interaction, motion and micro-details make the product feel intentional.">04</button>
-<button class="node n5" data-title="PROJECT" data-text="The final result becomes a real digital experience ready to share with the world.">05</button>
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-status"><span class="dot"></span> Available for new projects</div>
+      <h1 class="hero-headline">
+        <span class="line"><span>Hi, I'm Frasat Ahmad —</span></span>
+        <span class="line"><span>I design and build</span></span>
+        <span class="line"><span class="accent">digital experiences.</span></span>
+      </h1>
+      <p class="hero-sub">Founder of <b>NexGen Project</b>, a personal digital studio where every website starts as an idea and ends as a clean, working experience — designed, coded and shipped directly by me, end to end.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          Explore the work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <a href="#lab" class="btn btn-ghost">
+          Enter NexGen Lab
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">24/7</div><div class="label">WhatsApp contact</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="label">Responsive builds</div></div>
+        <div class="hero-stat"><div class="num">1:1</div><div class="label">Direct communication</div></div>
+        <div class="hero-stat"><div class="num">&infin;</div><div class="label">Ideas to explore</div></div>
+      </div>
+    </div>
+    <div class="hero-scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Websites <i>&bull;</i> UI/UX <i>&bull;</i> Landing Pages <i>&bull;</i> Business Sites <i>&bull;</i> Optimization <i>&bull;</i> Digital Experiences <i>&bull;</i></span>
+      <span>Websites <i>&bull;</i> UI/UX <i>&bull;</i> Landing Pages <i>&bull;</i> Business Sites <i>&bull;</i> Optimization <i>&bull;</i> Digital Experiences <i>&bull;</i></span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow reveal">About NexGen</div>
+          <h2 class="reveal">Not just another developer portfolio.</h2>
+          <div class="about-copy reveal">
+            <p>NexGen Project is a personal digital studio focused on useful, responsive and memorable web experiences.</p>
+            <p>Led by <strong>Frasat Ahmad</strong>, each project starts with the idea, then turns that idea into a clear interface, a functional experience and a polished final product — built and shipped directly by the person you talk to.</p>
+          </div>
+          <div class="timeline reveal">
+            <div class="timeline-item">
+              <div class="year">Start</div>
+              <div><h4>Learning by building</h4><p>Started building real websites instead of only studying theory — HTML, CSS and JavaScript, one project at a time.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">Growth</div>
+              <div><h4>Founding NexGen Project</h4><p>Turned the practice into a studio — a name, a standard, and a direct way of working with people who need a website built right.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">Now</div>
+              <div><h4>Building with intent</h4><p>Every project is judged the same way: does it look like nothing else, and does it actually work on every screen.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-panel reveal">
+          <h3>What drives me</h3>
+          <div class="driver-list">
+            <div class="driver-item">
+              <div class="driver-icon">&#9673;</div>
+              <div><h5>Original direction</h5><p>A project should have its own personality, not the feel of an untouched template.</p></div>
+            </div>
+            <div class="driver-item">
+              <div class="driver-icon">&#9673;</div>
+              <div><h5>Clarity over noise</h5><p>Every section earns its place. If it doesn't help the visitor understand or act, it doesn't ship.</p></div>
+            </div>
+            <div class="driver-item">
+              <div class="driver-icon">&#9673;</div>
+              <div><h5>Direct ownership</h5><p>No account managers, no hand-offs — you talk to the person actually building your site.</p></div>
+            </div>
+            <div class="driver-item">
+              <div class="driver-icon">&#9673;</div>
+              <div><h5>Built to grow</h5><p>Structured so new pages, projects and features can be added later without a rebuild.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE STATEMENT -->
+  <section id="signature">
+    <canvas id="signatureCanvas" class="signature-canvas" aria-hidden="true"></canvas>
+    <div class="signature-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="signature-text reveal"><span class="dim">I don't chase attention.</span><br>I <span class="bright">create impact.</span></p>
+      <p class="signature-tag reveal">NexGen Project &mdash; Frasat Ahmad</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">What NexGen does</div>
+        <h2 class="reveal">Built around the goal, not a template.</h2>
+        <p class="reveal">Select a service and start a focused project conversation — it carries straight into the contact form.</p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="service-card" data-service="Website Development">
+          <div class="service-icon">&#8984;</div>
+          <h3>Website Development</h3>
+          <p>Modern responsive websites built for desktop, tablet and mobile from a single codebase.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+        <div class="service-card" data-service="UI / UX Design">
+          <div class="service-icon">&#9670;</div>
+          <h3>UI / UX Design</h3>
+          <p>Clear interfaces with visual hierarchy and a thoughtful, low-friction user journey.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+        <div class="service-card" data-service="Landing Pages">
+          <div class="service-icon">&#9633;</div>
+          <h3>Landing Pages</h3>
+          <p>Focused pages designed around a single product, service or campaign goal.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+        <div class="service-card" data-service="Business Websites">
+          <div class="service-icon">&#9635;</div>
+          <h3>Business Websites</h3>
+          <p>Professional digital identities that make a business easy to understand at a glance.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+        <div class="service-card" data-service="Optimization">
+          <div class="service-icon">&#8599;</div>
+          <h3>Optimization</h3>
+          <p>Improve responsiveness, usability, structure and perceived performance of an existing site.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+        <div class="service-card" data-service="Custom Digital Solution">
+          <div class="service-icon">&#10022;</div>
+          <h3>Custom Digital Solution</h3>
+          <p>Build an experience around a requirement that doesn't fit a standard package.</p>
+          <a href="#contact" class="service-link">Start this <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="stack" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Tech stack</div>
+        <h2 class="reveal">Tools behind the build.</h2>
+        <p class="reveal">A lean, dependable stack — chosen for performance, not for the resume.</p>
+      </div>
+      <div class="stack-row reveal">
+        <div class="stack-chip"><span class="dot"></span>HTML5</div>
+        <div class="stack-chip"><span class="dot"></span>CSS3</div>
+        <div class="stack-chip"><span class="dot"></span>JavaScript</div>
+        <div class="stack-chip"><span class="dot"></span>Responsive Design</div>
+        <div class="stack-chip"><span class="dot"></span>UI / UX</div>
+        <div class="stack-chip"><span class="dot"></span>Git &amp; GitHub</div>
+        <div class="stack-chip"><span class="dot"></span>Deployment</div>
+        <div class="stack-chip" style="opacity:.55"><span class="dot"></span>+ more as NexGen grows</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Interactive showcase</div>
+        <h2 class="reveal">Selected concepts &amp; project directions.</h2>
+        <p class="reveal">These are portfolio concepts, not client claims — replace them with real projects as the work grows.</p>
+      </div>
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+        <button class="filter-btn" data-filter="portfolio">Portfolio</button>
+        <button class="filter-btn" data-filter="landing">Landing</button>
+      </div>
+      <div class="projects-grid reveal" id="projectsGrid">
+        <!-- injected by JS from PROJECTS data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXGEN LAB -->
+  <section id="lab" class="section">
+    <div class="wrap">
+      <div class="lab-intro">
+        <div class="eyebrow reveal">NexGen Lab &mdash; signature experience</div>
+        <h2 class="reveal">Explore how ideas connect.</h2>
+        <p class="reveal">This is the experimental heart of NexGen. Select a node and discover a part of the digital process — design, code, experience and projects are all connected.</p>
+      </div>
+      <div class="lab-stage reveal">
+        <div class="lab-canvas">
+          <svg viewBox="0 0 400 400" id="labSvg" aria-hidden="true"></svg>
+        </div>
+        <div class="lab-panel" id="labPanel">
+          <div class="tag">01 / Idea</div>
+          <h3>Every build starts as a question.</h3>
+          <p>What does this person or business actually need visitors to feel and do? The node map is a map of that thinking — tap a node to follow one thread through.</p>
+          <ul class="lab-list">
+            <li>Idea &rarr; Design &rarr; Build &rarr; Launch</li>
+            <li>Each node maps to a real part of the process</li>
+            <li>Nothing here is decorative — it's how NexGen actually works</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">The workflow</div>
+        <h2 class="reveal">From first thought to final launch.</h2>
+        <p class="reveal">A six-step sequence — order matters here, each step depends on the last.</p>
+      </div>
+      <div class="process-list reveal" id="processList">
+        <div class="process-item">
+          <div class="process-num">01 / Discover</div>
+          <div class="process-body"><h3>Understand</h3><p>Clarify the idea, audience, goals and requirements before anything gets designed.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02 / Plan</div>
+          <div class="process-body"><h3>Structure</h3><p>Map the pages, content, features and experience so the build has a clear shape.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03 / Design</div>
+          <div class="process-body"><h3>Direction</h3><p>Create a visual language — color, type, layout — that fits this project specifically.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04 / Build</div>
+          <div class="process-body"><h3>Develop</h3><p>Turn the approved direction into responsive, working code.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">05 / Test</div>
+          <div class="process-body"><h3>Refine</h3><p>Check interactions, forms, mobile layouts and real-world usability.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">06 / Launch</div>
+          <div class="process-body"><h3>Deliver</h3><p>Prepare the finished website for hosting, handover and future growth.</p></div>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY NEXGEN -->
+  <section id="why" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Why NexGen</div>
+        <h2 class="reveal">Small details. Big difference.</h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card"><div class="num">01</div><h4>Original Direction</h4><p>A project should have its own personality, not the look of an untouched template.</p></div>
+        <div class="why-card"><div class="num">02</div><h4>Performance First</h4><p>Motion and visual effects are designed to stay smooth and purposeful, never heavy.</p></div>
+        <div class="why-card"><div class="num">03</div><h4>Mobile First</h4><p>Every experience is designed to work properly on smaller screens, not just squeezed onto them.</p></div>
+        <div class="why-card"><div class="num">04</div><h4>Working Interactions</h4><p>Navigation, buttons, forms and WhatsApp actions are all actually connected.</p></div>
+        <div class="why-card"><div class="num">05</div><h4>Direct Communication</h4><p>Talk directly with Frasat Ahmad about requirements and changes — no middleman.</p></div>
+        <div class="why-card"><div class="num">06</div><h4>Future Ready</h4><p>The system can grow as real projects and case studies are added over time.</p></div>
+        <div class="why-card"><div class="num">07</div><h4>Honest Process</h4><p>Clear steps, clear expectations — no vague promises about timelines or results.</p></div>
+        <div class="why-card"><div class="num">08</div><h4>Built to Last</h4><p>Clean, structured code that's easy to maintain and extend later.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Skills &amp; expertise</div>
+        <h2 class="reveal">What NexGen is genuinely strong at.</h2>
+        <p class="reveal">No inflated numbers — just an honest sense of where the strength currently sits.</p>
+      </div>
+      <div class="skills-grid reveal" id="skillsGrid">
+        <div class="skill-row" data-level="92"><div class="skill-name">Front-end development<span>HTML, CSS, JavaScript</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-row" data-level="88"><div class="skill-name">Responsive design<span>Mobile-first layouts</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-row" data-level="80"><div class="skill-name">UI / UX design<span>Interfaces &amp; user flow</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-row" data-level="75"><div class="skill-name">Interaction design<span>Motion &amp; micro-interactions</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-row" data-level="78"><div class="skill-name">Performance tuning<span>Speed &amp; perceived load</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-row" data-level="82"><div class="skill-name">Deployment<span>Shipping &amp; hosting</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">In numbers</div>
+        <h2 class="reveal">Where NexGen stands today.</h2>
+      </div>
+      <div class="stats-grid reveal">
+        <div class="stat-card"><div class="count" data-count="6">0</div><div class="label">Concepts &amp; projects built</div></div>
+        <div class="stat-card"><div class="count" data-count="7">0</div><div class="label">Core technologies</div></div>
+        <div class="stat-card"><div class="count" data-count="100" data-suffix="%">0</div><div class="label">Responsive by default</div></div>
+        <div class="stat-card"><div class="count" data-count="1">0</div><div class="label">Person you actually talk to</div></div>
+        <div class="stat-card"><div class="count" data-count="6">0</div><div class="label">Services offered</div></div>
+        <div class="stat-card"><div class="count" data-count="24">0</div><div class="label">Hour WhatsApp response window</div></div>
+        <div class="stat-card"><div class="count" data-count="0" data-suffix="+">0</div><div class="label">Templates used — ever</div></div>
+        <div class="stat-card"><div class="count" data-count="100" data-suffix="%">0</div><div class="label">Custom-coded, section by section</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Client feedback</div>
+        <h2 class="reveal">What people say, honestly.</h2>
+        <p class="reveal">Example feedback — a format preview, shown without names, to be replaced with real client reviews as they come in.</p>
+      </div>
+      <div class="testimonials-grid reveal" id="testimonialsGrid"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">FAQ</div>
+        <h2 class="reveal">Questions before we build?</h2>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can NexGen build a completely custom website?<span class="plus"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. The direction, structure and interactions can be tailored around the actual project instead of simply changing a template.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Will the website work on phones?<span class="plus"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Responsive behavior is part of the development process, with specific attention to mobile navigation, spacing, forms and touch interactions.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I request a specific service?<span class="plus"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — use any service button or the contact form, and the selected service carries directly into the enquiry.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How long does a website take?<span class="plus"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">It depends on scope — a landing page and a full business website take different amounts of time. Timeline gets confirmed once the requirements are clear.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How do I contact Frasat?<span class="plus"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">You can call, WhatsApp or email using the contact details in the final section below.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow reveal">Start something</div>
+        <h2 class="reveal">Let's turn an idea into a digital experience.</h2>
+        <p class="reveal">Send an enquiry through WhatsApp, email, or the form below.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card reveal">
+          <div class="contact-row">
+            <div class="ic">&#9742;</div>
+            <div><div class="lbl">Phone / WhatsApp</div><a class="val" href="tel:+923468823902">+92 346 8823902</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ic">&#9993;</div>
+            <div><div class="lbl">Email</div><a class="val" href="mailto:contactmenexgenprojects@gmail.com">contactmenexgenprojects@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ic">&#9673;</div>
+            <div><div class="lbl">Brand</div><div class="val">NexGen Project</div></div>
+          </div>
+          <div class="contact-actions">
+            <a href="tel:+923468823902" class="btn btn-ghost">Call</a>
+            <a href="https://wa.me/923468823902?text=Hello%20Frasat%20Ahmad%2C%20I%20want%20to%20discuss%20a%20NexGen%20Project." class="btn btn-primary" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input class="form-control" id="cf-name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input class="form-control" id="cf-email" name="email" type="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service</label>
+            <div class="service-select" id="serviceSelect">
+              <button type="button" class="service-chip">Website Development</button>
+              <button type="button" class="service-chip">UI / UX Design</button>
+              <button type="button" class="service-chip">Landing Pages</button>
+              <button type="button" class="service-chip">Business Websites</button>
+              <button type="button" class="service-chip">Optimization</button>
+              <button type="button" class="service-chip">Custom Digital Solution</button>
+            </div>
+            <input type="hidden" name="service" id="cf-service">
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea class="form-control" id="cf-message" name="message" placeholder="Tell me about the idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+            Send Enquiry
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="final-cta">
+    <div class="final-cta-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="final-cta-text reveal">Got an idea? Let's make it impossible to ignore.</p>
+      <p class="final-cta-sub reveal">Send the enquiry — the reply comes from Frasat directly.</p>
+      <div class="final-cta-actions reveal">
+        <a href="https://wa.me/923468823902?text=Hello%20Frasat%2C%20I%20want%20to%20start%20a%20NexGen%20Project." class="btn btn-primary" target="_blank" rel="noopener">
+          Start a Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Use the form instead</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo"><span class="nav-logo-mark">N</span>NexGenProject.</a>
+        <p>Original websites and digital experiences by Frasat Ahmad.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#lab">Lab</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Website Development</a>
+        <a href="#services">UI / UX Design</a>
+        <a href="#services">Business Websites</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="tel:+923468823902">+92 346 8823902</a>
+        <a href="mailto:contactmenexgenprojects@gmail.com">Email</a>
+        <a href="https://wa.me/923468823902" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> NexGen Project &mdash; Frasat Ahmad</span>
+      <a href="#home" class="back-top" aria-label="Back to top">&uarr;</a>
+    </div>
+  </div>
+</footer>
+
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="projectModal" aria-hidden="true">
+  <div class="project-modal-backdrop" data-close></div>
+  <div class="project-modal-panel">
+    <button class="project-modal-close" data-close aria-label="Close">&times;</button>
+    <div class="project-modal-cat eyebrow" id="modalCat">Category</div>
+    <h3 id="modalTitle">Project title</h3>
+    <div class="project-modal-media" id="modalMedia">NX</div>
+    <div class="modal-meta-grid">
+      <div class="modal-meta-block full"><h5>Overview</h5><p id="modalOverview"></p></div>
+      <div class="modal-meta-block"><h5>Problem</h5><p id="modalProblem"></p></div>
+      <div class="modal-meta-block"><h5>Solution</h5><p id="modalSolution"></p></div>
+      <div class="modal-meta-block full"><h5>Key features</h5><p id="modalFeatures"></p></div>
+      <div class="modal-meta-block full"><h5>Technologies</h5><div class="modal-tech-tags" id="modalTech"></div></div>
+    </div>
+    <div class="modal-actions">
+      <a href="#contact" class="btn btn-primary" data-close>Discuss this concept</a>
+      <button class="btn btn-ghost" data-close>Close</button>
+    </div>
+  </div>
 </div>
-</div></section>
-
-<section id="services"><div class="container"><div class="section-head reveal"><div class="eyebrow">What NexGen Does</div><h2 class="section-title">Built around the goal, not a template.</h2><p class="section-text">Select a service and start a focused project conversation.</p></div>
-<div class="grid3">
-<article class="card reveal"><div class="icon">⌘</div><h3>Website Development</h3><p>Modern responsive websites built for desktop, tablet and mobile.</p><a class="card-action choose-service" data-service="Website Development" href="#contact">Start this →</a></article>
-<article class="card reveal delay-1"><div class="icon">◈</div><h3>UI / UX Design</h3><p>Clear interfaces with visual hierarchy and thoughtful user journeys.</p><a class="card-action choose-service" data-service="UI / UX Design" href="#contact">Start this →</a></article>
-<article class="card reveal delay-2"><div class="icon">◉</div><h3>Landing Pages</h3><p>Focused pages designed around a product, service or campaign.</p><a class="card-action choose-service" data-service="Landing Page" href="#contact">Start this →</a></article>
-<article class="card reveal"><div class="icon">▣</div><h3>Business Websites</h3><p>Professional digital identities that make a business easy to understand.</p><a class="card-action choose-service" data-service="Business Website" href="#contact">Start this →</a></article>
-<article class="card reveal delay-1"><div class="icon">↗</div><h3>Optimization</h3><p>Improve responsiveness, usability, structure and perceived performance.</p><a class="card-action choose-service" data-service="Website Optimization" href="#contact">Start this →</a></article>
-<article class="card reveal delay-2"><div class="icon">✦</div><h3>Custom Digital Solution</h3><p>Build an experience around a requirement that does not fit a standard package.</p><a class="card-action choose-service" data-service="Custom Digital Solution" href="#contact">Start this →</a></article>
-</div></div></section>
-
-<section id="process"><div class="container"><div class="section-head reveal"><div class="eyebrow">The Workflow</div><h2 class="section-title">From first thought to final launch.</h2></div><div class="process">
-<div class="step reveal"><b>01 / DISCOVER</b><h3>Understand</h3><p>Clarify the idea, audience, goals and requirements.</p></div><div class="step reveal delay-1"><b>02 / PLAN</b><h3>Structure</h3><p>Map the pages, content, features and experience.</p></div><div class="step reveal delay-2"><b>03 / DESIGN</b><h3>Direction</h3><p>Create a visual language that fits the project.</p></div><div class="step reveal"><b>04 / BUILD</b><h3>Develop</h3><p>Turn the approved direction into responsive code.</p></div><div class="step reveal delay-1"><b>05 / TEST</b><h3>Refine</h3><p>Check interactions, forms, mobile layouts and usability.</p></div><div class="step reveal delay-2"><b>06 / LAUNCH</b><h3>Deliver</h3><p>Prepare the finished website for hosting and future growth.</p></div>
-</div></div></section>
-
-<section id="projects"><div class="container"><div class="section-head reveal"><div class="eyebrow">Interactive Showcase</div><h2 class="section-title">Selected concepts & project directions.</h2><p class="section-text">These are portfolio concepts, not fake client claims. Replace them with real projects as the portfolio grows.</p></div>
-<div class="tags reveal"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="business">Business</button><button class="filter" data-filter="portfolio">Portfolio</button><button class="filter" data-filter="landing">Landing</button></div>
-<div class="grid3" id="projectGrid">
-<article class="card project reveal" data-category="business" data-project="company"><div class="preview"><div class="browser-screen"><div></div><div style="width:72%"></div><div></div><div></div></div></div><div class="project-body"><span class="tag">Business</span><h3>Company Experience</h3><p>Professional online presence with services, story, work and contact.</p><span class="stack">HTML • CSS • JavaScript</span></div></article>
-<article class="card project reveal delay-1" data-category="landing" data-project="launch"><div class="preview" style="background:linear-gradient(135deg,#10394a,#181f45)"><div class="browser-screen"><div></div><div style="width:58%"></div><div></div><div></div></div></div><div class="project-body"><span class="tag">Landing</span><h3>Product Launch</h3><p>A focused conversion-oriented landing experience for a digital product.</p><span class="stack">UI/UX • Motion • Responsive</span></div></article>
-<article class="card project reveal delay-2" data-category="portfolio" data-project="creator"><div class="preview" style="background:linear-gradient(135deg,#172f47,#30204b)"><div class="browser-screen"><div></div><div style="width:64%"></div><div></div><div></div></div></div><div class="project-body"><span class="tag">Portfolio</span><h3>Creator Portfolio</h3><p>A memorable personal identity for skills, work and digital services.</p><span class="stack">Design • Development • SEO</span></div></article>
-</div></div></section>
-
-<section><div class="container"><div class="section-head reveal"><div class="eyebrow">Why NexGen</div><h2 class="section-title">Small details. Big difference.</h2></div><div class="why">
-<div class="card reveal"><h3>Original Direction</h3><p class="muted">A project should have its own personality instead of looking like an untouched template.</p></div><div class="card reveal delay-1"><h3>Performance First</h3><p class="muted">Motion and visual effects are designed to stay smooth and purposeful.</p></div><div class="card reveal delay-2"><h3>Mobile First</h3><p class="muted">The experience is designed to work properly on smaller screens.</p></div><div class="card reveal"><h3>Working Interactions</h3><p class="muted">Navigation, buttons, forms, calls and WhatsApp actions are connected.</p></div><div class="card reveal delay-1"><h3>Direct Communication</h3><p class="muted">Talk directly with Frasat Ahmad about requirements and changes.</p></div><div class="card reveal delay-2"><h3>Future Ready</h3><p class="muted">The system can grow as real projects and case studies are added.</p></div>
-</div></div></section>
-
-<section><div class="container"><div class="section-head reveal"><div class="eyebrow">FAQ</div><h2 class="section-title">Questions before we build?</h2></div><div class="faq">
-<div class="faq-item reveal"><button class="faq-q">Can NexGen build a completely custom website?<span>+</span></button><div class="faq-a"><div>Yes. The direction, structure and interactions can be tailored around the actual project instead of simply changing a template.</div></div></div>
-<div class="faq-item reveal"><button class="faq-q">Will the website work on phones?<span>+</span></button><div class="faq-a"><div>Responsive behavior is part of the development process, with special attention to mobile navigation, spacing, forms and touch interactions.</div></div></div>
-<div class="faq-item reveal"><button class="faq-q">Can I request a specific service?<span>+</span></button><div class="faq-a"><div>Yes. Use any service button or the contact form and the selected service can be carried into the enquiry.</div></div></div>
-<div class="faq-item reveal"><button class="faq-q">How do I contact Frasat?<span>+</span></button><div class="faq-a"><div>You can call, WhatsApp or email using the contact details in the final section.</div></div></div>
-</div></div></section>
-
-<section id="contact"><div class="container"><div class="contact-wrap reveal"><div class="section-head"><div class="eyebrow">Start Something</div><h2 class="section-title">Let's turn an idea into a digital experience.</h2><p class="section-text">Send an enquiry through WhatsApp, or use the direct contact options below.</p></div>
-<div class="contact-grid"><div class="contact-info">
-<div class="contact-item"><small>Name</small><strong>Frasat Ahmad</strong></div><div class="contact-item"><small>Brand</small><strong>NexGen Project</strong></div><div class="contact-item"><small>Phone / WhatsApp</small><a href="tel:+923468823902"><strong>+92 346 8823902</strong></a></div><div class="contact-item"><small>Email</small><a href="mailto:contactmenexgenprojects@gmail.com"><strong>contactmenexgenprojects@gmail.com</strong></a></div>
-<div class="actions"><a class="btn btn-cyan" href="tel:+923468823902">Call</a><a class="btn btn-primary" target="_blank" href="https://wa.me/923468823902?text=Hello%20Frasat%20Ahmad%2C%20I%20want%20to%20discuss%20a%20NexGen%20Project.">WhatsApp</a><button class="btn" id="copyEmail">Copy Email</button></div>
-</div>
-<form class="form" id="contactForm"><input id="name" placeholder="Your Name" autocomplete="name" required><input id="email" type="email" placeholder="Email Address" autocomplete="email" required><input id="service" placeholder="Project / Service" required><textarea id="message" placeholder="Tell me what you want to build..." required></textarea><button class="btn btn-primary" id="submitBtn" type="submit">Send Enquiry on WhatsApp →</button></form>
-</div></div></div></section>
-
-<footer><div class="container"><div class="footer-grid"><div><div class="logo">NexGen<span>Project.</span></div><p style="margin-top:12px">Original websites and digital experiences by Frasat Ahmad.</p></div><div><h4>Explore</h4><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#lab">Lab</a><a href="#projects">Projects</a></div></div><div><h4>Contact</h4><div class="footer-links"><a href="tel:+923468823902">+92 346 8823902</a><a href="mailto:contactmenexgenprojects@gmail.com">Email</a><a target="_blank" href="https://wa.me/923468823902">WhatsApp</a></div></div></div><div class="copyright"><span>© <span id="year"></span> NexGen Project</span><span>Frasat Ahmad</span></div></div></footer>
-
-<a class="whatsapp" target="_blank" href="https://wa.me/923468823902?text=Hello%20Frasat%20Ahmad%2C%20I%20want%20to%20discuss%20a%20NexGen%20Project." aria-label="WhatsApp">☏</a>
-<button class="top" id="top" aria-label="Back to top">↑</button><div class="toast" id="toast"></div>
-
-<div class="modal" id="modal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="eyebrow" id="modalTag">PROJECT</div><h2 id="modalTitle">Project</h2><p class="muted" id="modalText"></p><div class="modal-meta" id="modalMeta"></div><a class="btn btn-cyan" href="#contact" id="modalCta">Discuss this concept →</a></div></div>
 
 <script>
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const nav=$("#nav"),menu=$("#menu"),navLinks=$("#navLinks"),progress=$("#progress"),topBtn=$("#top"),toast=$("#toast");
-const showToast=t=>{toast.textContent=t;toast.classList.add("show");clearTimeout(showToast.t);showToast.t=setTimeout(()=>toast.classList.remove("show"),1800)};
-menu.addEventListener("click",()=>{const open=menu.classList.toggle("open");navLinks.classList.toggle("open",open);menu.setAttribute("aria-expanded",open);menu.setAttribute("aria-label",open?"Close menu":"Open menu")});
-$$(".nav-links a").forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");navLinks.classList.remove("open");menu.setAttribute("aria-expanded","false")}));
-$("#year").textContent=new Date().getFullYear();
+(function(){
+"use strict";
 
-const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");revealObserver.unobserve(e.target)}}),{threshold:.12});
-$$(".reveal").forEach(el=>revealObserver.observe(el));
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const sections=[...$$("section[id]")],navAnchors=[...$$(".nav-links a")];
-function onScroll(){const y=scrollY;nav.classList.toggle("scrolled",y>35);topBtn.classList.toggle("show",y>600);const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?y/h*100:0)+"%";let current="home";sections.forEach(s=>{if(y>=s.offsetTop-160)current=s.id});navAnchors.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current))}
-addEventListener("scroll",onScroll,{passive:true});onScroll();
-topBtn.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+/* ============================================================
+   LOADER
+   ============================================================ */
+(function initLoader(){
+  var mark = document.getElementById('loaderMark');
+  var word = 'NEXGEN';
+  word.split('').forEach(function(ch, i){
+    var span = document.createElement('span');
+    span.textContent = ch;
+    span.style.animationDelay = (i * 0.05) + 's';
+    mark.appendChild(span);
+  });
+  var loader = document.getElementById('loader');
+  var done = function(){
+    loader.classList.add('hidden');
+    document.body.classList.remove('no-scroll');
+  };
+  document.body.classList.add('no-scroll');
+  if (reduceMotion){
+    setTimeout(done, 250);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(done, 1200); });
+    setTimeout(done, 2600); // safety fallback
+  }
+})();
 
-$$(".card").forEach(card=>card.addEventListener("pointermove",e=>{const r=card.getBoundingClientRect();card.style.setProperty("--mx",(e.clientX-r.left)+"px");card.style.setProperty("--my",(e.clientY-r.top)+"px")}));
+/* ============================================================
+   CUSTOM CURSOR
+   ============================================================ */
+(function initCursor(){
+  if (window.matchMedia('(hover:none)').matches) return;
+  var dot = document.getElementById('cursorDot');
+  var ring = document.getElementById('cursorRing');
+  var rx = 0, ry = 0, dx = 0, dy = 0;
+  window.addEventListener('mousemove', function(e){
+    dx = e.clientX; dy = e.clientY;
+    dot.style.transform = 'translate('+dx+'px,'+dy+'px) translate(-50%,-50%)';
+  });
+  (function loop(){
+    rx += (dx - rx) * 0.18;
+    ry += (dy - ry) * 0.18;
+    ring.style.transform = 'translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
+    requestAnimationFrame(loop);
+  })();
+  var interactive = 'a, button, .project-card, .lab-node, .filter-btn, .service-chip, .faq-q, .stack-chip';
+  document.addEventListener('mouseover', function(e){
+    if (e.target.closest(interactive)) ring.classList.add('active');
+  });
+  document.addEventListener('mouseout', function(e){
+    if (e.target.closest(interactive)) ring.classList.remove('active');
+  });
+})();
 
-$$(".node").forEach(n=>n.addEventListener("click",()=>{$("#labOutput").innerHTML="<strong>"+n.dataset.title+"</strong><span>"+n.dataset.text+"</span>";showToast(n.dataset.title+" explored")}));
+/* ============================================================
+   NAV: scroll state, active link, mobile menu
+   ============================================================ */
+(function initNav(){
+  var nav = document.getElementById('site-nav');
+  var onScroll = function(){
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
 
-$$(".choose-service").forEach(a=>a.addEventListener("click",()=>{$("#service").value=a.dataset.service;showToast(a.dataset.service+" selected")}));
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
+  var toggleMenu = function(open){
+    toggle.classList.toggle('active', open);
+    toggle.setAttribute('aria-expanded', open);
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', !open);
+    document.body.classList.toggle('no-scroll', open);
+  };
+  toggle.addEventListener('click', function(){
+    toggleMenu(!toggle.classList.contains('active'));
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ toggleMenu(false); });
+  });
 
-$$(".filter").forEach(f=>f.addEventListener("click",()=>{$$(".filter").forEach(x=>x.classList.remove("active"));f.classList.add("active");const cat=f.dataset.filter;$$(".project").forEach((p,i)=>{const show=cat==="all"||p.dataset.category===cat;p.classList.toggle("hidden",!show);if(show){p.style.animation="none";void p.offsetWidth;p.style.animation="revealProject .45s cubic-bezier(.2,.8,.2,1) both"}})}));
-const style=document.createElement("style");style.textContent="@keyframes revealProject{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:none}}";document.head.appendChild(style);
+  // active link on scroll
+  var sections = ['home','about','lab','services','process','projects','contact']
+    .map(function(id){ return document.getElementById(id); })
+    .filter(Boolean);
+  var links = document.querySelectorAll('.nav-links a');
+  var setActive = function(){
+    var pos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(sec){ if (sec.offsetTop <= pos) current = sec; });
+    links.forEach(function(l){
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current.id);
+    });
+  };
+  setActive();
+  window.addEventListener('scroll', setActive, {passive:true});
+})();
 
-const projectData={company:{tag:"BUSINESS",title:"Company Experience",text:"A concept for a professional business website with a strong story, services, work showcase and direct contact journey.",meta:["Responsive","Business","HTML / CSS / JS"]},launch:{tag:"LANDING",title:"Product Launch",text:"A focused landing experience where hierarchy, motion and calls-to-action guide the visitor without unnecessary clutter.",meta:["Landing","UI/UX","Motion"]},creator:{tag:"PORTFOLIO",title:"Creator Portfolio",text:"A memorable personal website concept for presenting work, skills, services and a strong digital identity.",meta:["Portfolio","Responsive","SEO"]}};
-const modal=$("#modal");
-$$(".project").forEach(p=>p.addEventListener("click",()=>{const d=projectData[p.dataset.project];$("#modalTag").textContent=d.tag;$("#modalTitle").textContent=d.title;$("#modalText").textContent=d.text;$("#modalMeta").innerHTML=d.meta.map(x=>"<span>"+x+"</span>").join("");modal.classList.add("open");modal.setAttribute("aria-hidden","false")}));
-function closeModal(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true")}$("#modalClose").addEventListener("click",closeModal);modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+/* ============================================================
+   SCROLL REVEAL (IntersectionObserver)
+   ============================================================ */
+(function initReveal(){
+  var els = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
 
-$$(".faq-q").forEach(q=>q.addEventListener("click",()=>{const item=q.parentElement;$$(".faq-item").forEach(x=>{if(x!==item)x.classList.remove("open")});item.classList.toggle("open")}));
+/* ============================================================
+   SIGNATURE SECTION — live particle network background
+   ============================================================ */
+(function initSignatureCanvas(){
+  var canvas = document.getElementById('signatureCanvas');
+  if (!canvas) return;
+  var section = document.getElementById('signature');
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var running = false;
+  var mouse = { x: null, y: null };
 
-$("#copyEmail").addEventListener("click",async()=>{try{await navigator.clipboard.writeText("contactmenexgenprojects@gmail.com");showToast("Email copied ✓")}catch{showToast("Email: contactmenexgenprojects@gmail.com")}});
+  if (reduceMotion){
+    canvas.style.display = 'none';
+    return;
+  }
 
-$("#contactForm").addEventListener("submit",e=>{e.preventDefault();const name=$("#name").value.trim(),email=$("#email").value.trim(),service=$("#service").value.trim(),message=$("#message").value.trim();if(!name||!email||!service||!message){showToast("Please complete the form");return}const btn=$("#submitBtn");btn.textContent="Preparing enquiry…";setTimeout(()=>{const text=`Hello Frasat Ahmad, I want to discuss a NexGen Project.%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AProject/Service: ${encodeURIComponent(service)}%0A%0AMessage: ${encodeURIComponent(message)}`;window.open("https://wa.me/923468823902?text="+text,"_blank");btn.textContent="Enquiry prepared ✓";showToast("Opening WhatsApp ✓");setTimeout(()=>btn.textContent="Send Enquiry on WhatsApp →",1600)},300)});
+  function resize(){
+    var rect = section.getBoundingClientRect();
+    w = rect.width; h = rect.height;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var count = Math.round((w * h) / 16000);
+    count = Math.max(24, Math.min(count, 90));
+    particles = [];
+    for (var i = 0; i < count; i++){
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: Math.random() * 1.6 + 0.6
+      });
+    }
+  }
 
-if(matchMedia("(pointer:fine)").matches){document.addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--cursor-x",e.clientX+"px");document.documentElement.style.setProperty("--cursor-y",e.clientY+"px")},{passive:true})}
+  function step(){
+    if (!running) return;
+    ctx.clearRect(0, 0, w, h);
+    var linkDist = Math.min(150, w / 6);
+
+    for (var i = 0; i < particles.length; i++){
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+
+      if (mouse.x !== null){
+        var mdx = p.x - mouse.x, mdy = p.y - mouse.y;
+        var mdist = Math.sqrt(mdx*mdx + mdy*mdy);
+        if (mdist < 110){
+          var force = (110 - mdist) / 110 * 0.03;
+          p.vx += (mdx / (mdist || 1)) * force;
+          p.vy += (mdy / (mdist || 1)) * force;
+        }
+      }
+      p.vx *= 0.995; p.vy *= 0.995;
+    }
+
+    for (var a = 0; a < particles.length; a++){
+      for (var b = a + 1; b < particles.length; b++){
+        var pa = particles[a], pb = particles[b];
+        var dx = pa.x - pb.x, dy = pa.y - pb.y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < linkDist){
+          ctx.strokeStyle = 'rgba(0,216,255,' + ((1 - dist/linkDist) * 0.35) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(pa.x, pa.y);
+          ctx.lineTo(pb.x, pb.y);
+          ctx.stroke();
+        }
+      }
+    }
+    for (var j = 0; j < particles.length; j++){
+      var pt = particles[j];
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, pt.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(148,216,255,0.75)';
+      ctx.fill();
+    }
+    requestAnimationFrame(step);
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  section.addEventListener('mousemove', function(e){
+    var rect = section.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  section.addEventListener('mouseleave', function(){ mouse.x = null; mouse.y = null; });
+
+  if ('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !running){
+          running = true;
+          requestAnimationFrame(step);
+        } else if (!entry.isIntersecting){
+          running = false;
+        }
+      });
+    }, {threshold: 0.05});
+    io2.observe(section);
+  } else {
+    running = true;
+    requestAnimationFrame(step);
+  }
+})();
+
+/* ============================================================
+   PROJECTS DATA + RENDER + FILTER + MODAL
+   ============================================================ */
+var PROJECTS = [
+  {
+    id:'company-experience',
+    cat:'business', catLabel:'Business',
+    title:'Company Experience',
+    desc:'Professional online presence with services, story, work and contact.',
+    tech:['HTML','CSS','JavaScript'],
+    overview:'A complete company website concept — homepage, services breakdown, story section and a direct contact path, built to make a business easy to understand within seconds of landing.',
+    problem:'Visitors bounce when a business site buries what the company actually does under generic stock layouts.',
+    solution:'Lead with a clear one-line value statement, back it with a structured services grid, and keep contact one click away from every section.',
+    features:'Structured services grid, clear navigation, direct contact routing, mobile-first layout.'
+  },
+  {
+    id:'product-launch',
+    cat:'landing', catLabel:'Landing',
+    title:'Product Launch',
+    desc:'A focused conversion-oriented landing experience for a digital product.',
+    tech:['UI/UX','Motion','Responsive'],
+    overview:'A single-purpose landing page built around one product and one action — built to convert attention into a sign-up or purchase without distraction.',
+    problem:'Multi-purpose pages dilute focus — a launch needs the visitor doing exactly one thing.',
+    solution:'Strip the page to hero, proof, and one persistent call to action, using motion only to guide attention downward.',
+    features:'Single conversion goal, scroll-triggered proof section, persistent CTA, lightweight animation.'
+  },
+  {
+    id:'creator-portfolio',
+    cat:'portfolio', catLabel:'Portfolio',
+    title:'Creator Portfolio',
+    desc:'A memorable personal identity for skills, work and digital services.',
+    tech:['Design','Development','SEO'],
+    overview:'A personal portfolio concept for a creator or freelancer — built to feel like a signature rather than a resume.',
+    problem:'Most personal portfolios look interchangeable — same layout, same generic bio, same project grid.',
+    solution:'Build the whole page around one distinctive visual signature and let real work samples do the talking.',
+    features:'Distinctive hero statement, project showcase, skills section, direct contact CTA.'
+  },
+  {
+    id:'business-hub',
+    cat:'business', catLabel:'Business',
+    title:'Service Business Hub',
+    desc:'A structured digital home for a local or service-based business.',
+    tech:['HTML','CSS','JavaScript'],
+    overview:'A concept built for service businesses that need bookings, service listings and trust signals in one clear structure.',
+    problem:'Service businesses often need visitors to take an action (call, book, enquire) fast — not scroll endlessly.',
+    solution:'Put contact actions above the fold and repeat them contextually next to each service.',
+    features:'Service listings, repeated contact CTAs, FAQ section, mobile-first booking path.'
+  },
+  {
+    id:'launch-page',
+    cat:'landing', catLabel:'Landing',
+    title:'Campaign Landing',
+    desc:'A short-form landing page built around a single marketing campaign.',
+    tech:['UI/UX','Responsive'],
+    overview:'A concise, campaign-specific landing page concept — built to be shipped fast and swapped out per campaign.',
+    problem:'Campaigns need dedicated pages, but rebuilding a full site structure each time is wasteful.',
+    solution:'A reusable, modular landing template that keeps brand consistency while changing headline, offer and CTA per campaign.',
+    features:'Modular sections, fast-loading structure, campaign-specific CTA slot.'
+  },
+  {
+    id:'studio-portfolio',
+    cat:'portfolio', catLabel:'Portfolio',
+    title:'Studio Identity',
+    desc:'A digital studio identity concept built around process and craft.',
+    tech:['Design','Development'],
+    overview:'A studio-style portfolio concept that foregrounds process (how work gets made) alongside the finished output.',
+    problem:'Showing only final results hides the thinking that makes a studio trustworthy to hire.',
+    solution:'Add a visible process section between the hero and the project grid, so visitors see both the "how" and the "what."',
+    features:'Process timeline, project showcase, studio positioning statement.'
+  }
+];
+
+(function initProjects(){
+  var grid = document.getElementById('projectsGrid');
+  var glyphs = {business:'B', landing:'L', portfolio:'P'};
+
+  function render(filter){
+    grid.innerHTML = '';
+    PROJECTS.filter(function(p){ return filter === 'all' || p.cat === filter; }).forEach(function(p, i){
+      var card = document.createElement('div');
+      card.className = 'project-card';
+      card.setAttribute('data-id', p.id);
+      card.style.setProperty('--i', i);
+      card.innerHTML =
+        '<div class="project-media"><span class="project-cat">'+p.catLabel+'</span><span class="glyph">'+glyphs[p.cat]+'</span></div>'+
+        '<div class="project-body">'+
+          '<h3>'+p.title+'</h3>'+
+          '<p>'+p.desc+'</p>'+
+          '<div class="project-tech">'+p.tech.join(' &bull; ')+'</div>'+
+          '<span class="project-view">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>'+
+        '</div>';
+      card.addEventListener('click', function(){ openModal(p); });
+      grid.appendChild(card);
+    });
+  }
+  render('all');
+
+  document.querySelectorAll('.filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      render(btn.getAttribute('data-filter'));
+    });
+  });
+
+  // Modal
+  var modal = document.getElementById('projectModal');
+  function openModal(p){
+    document.getElementById('modalCat').textContent = p.catLabel;
+    document.getElementById('modalTitle').textContent = p.title;
+    document.getElementById('modalMedia').textContent = glyphs[p.cat] + p.title.charAt(0);
+    document.getElementById('modalOverview').textContent = p.overview;
+    document.getElementById('modalProblem').textContent = p.problem;
+    document.getElementById('modalSolution').textContent = p.solution;
+    document.getElementById('modalFeatures').textContent = p.features;
+    var techWrap = document.getElementById('modalTech');
+    techWrap.innerHTML = '';
+    p.tech.forEach(function(t){
+      var s = document.createElement('span');
+      s.textContent = t;
+      techWrap.appendChild(s);
+    });
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('no-scroll');
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('no-scroll');
+  }
+  modal.addEventListener('click', function(e){
+    if (e.target.hasAttribute('data-close') || e.target.closest('[data-close]')) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+
+/* ============================================================
+   NEXGEN LAB — node map
+   ============================================================ */
+var LAB_NODES = [
+  {tag:'01 / Idea', title:'Every build starts as a question.', body:"What does this person or business actually need visitors to feel and do? That question shapes everything downstream.", list:['Idea &rarr; Design &rarr; Build &rarr; Launch','Defines scope before any code is written','The single most important step in the whole process']},
+  {tag:'02 / Design', title:'Direction before decoration.', body:'A visual language gets chosen deliberately — color, type, layout — specific to this project, not reused from the last one.', list:['Palette, type and layout chosen together','No default templates reused between projects','Every choice has to be justifiable']},
+  {tag:'03 / Code', title:'Where the direction becomes real.', body:'HTML, CSS and JavaScript turn the approved design into a responsive, working site — built clean, not padded.', list:['Semantic, accessible HTML','Purposeful CSS, no redundant rules','JavaScript only where it earns its place']},
+  {tag:'04 / Experience', title:'How it actually feels to use.', body:'Motion, spacing and feedback are tuned so the site feels smooth on a phone in bad signal, not just on a fast laptop.', list:['Reduced-motion support built in','Mobile tested, not just desktop-first','No animation without a purpose']},
+  {tag:'05 / Projects', title:'Where all four threads meet.', body:'Every finished project on this page is the output of idea, design, code and experience working together, not any one of them alone.', list:['Real, working project outcomes','A record of how the process holds up','The proof, not just the promise']}
+];
+
+(function initLab(){
+  var svg = document.getElementById('labSvg');
+  var panel = document.getElementById('labPanel');
+  if (!svg) return;
+  var cx = 200, cy = 200, r = 140;
+  var ns = 'http://www.w3.org/2000/svg';
+  var n = LAB_NODES.length;
+  var coords = [];
+
+  for (var i = 0; i < n; i++){
+    var angle = (Math.PI * 2 * i / n) - Math.PI/2;
+    coords.push({ x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) });
+  }
+
+  // links (connect every node to center + neighbors, forming the "connected ideas" web)
+  for (var a = 0; a < n; a++){
+    for (var b = a+1; b < n; b++){
+      var line = document.createElementNS(ns,'line');
+      line.setAttribute('x1', coords[a].x); line.setAttribute('y1', coords[a].y);
+      line.setAttribute('x2', coords[b].x); line.setAttribute('y2', coords[b].y);
+      line.setAttribute('class','lab-link');
+      line.setAttribute('data-a', a); line.setAttribute('data-b', b);
+      svg.appendChild(line);
+    }
+  }
+  // center node
+  var centerCircle = document.createElementNS(ns,'circle');
+  centerCircle.setAttribute('cx', cx); centerCircle.setAttribute('cy', cy); centerCircle.setAttribute('r', 26);
+  centerCircle.setAttribute('fill', 'rgba(0,216,255,.08)');
+  centerCircle.setAttribute('stroke', 'var(--cyan)');
+  centerCircle.setAttribute('stroke-width', '1.2');
+  svg.appendChild(centerCircle);
+  var centerText = document.createElementNS(ns,'text');
+  centerText.setAttribute('x', cx); centerText.setAttribute('y', cy+4);
+  centerText.setAttribute('text-anchor','middle');
+  centerText.setAttribute('class','');
+  centerText.setAttribute('style','font-family:var(--font-display);font-weight:700;font-size:13px;fill:var(--cyan);');
+  centerText.textContent = 'NX';
+  svg.appendChild(centerText);
+
+  var nodeEls = [];
+  LAB_NODES.forEach(function(node, i){
+    var g = document.createElementNS(ns,'g');
+    g.setAttribute('class','lab-node');
+    g.setAttribute('tabindex','0');
+    g.setAttribute('role','button');
+    g.setAttribute('aria-label', node.tag);
+
+    var c = document.createElementNS(ns,'circle');
+    c.setAttribute('class','core');
+    c.setAttribute('cx', coords[i].x); c.setAttribute('cy', coords[i].y); c.setAttribute('r', 22);
+    g.appendChild(c);
+
+    var t = document.createElementNS(ns,'text');
+    t.setAttribute('x', coords[i].x); t.setAttribute('y', coords[i].y+4);
+    t.setAttribute('text-anchor','middle');
+    t.textContent = '0' + (i+1);
+    g.appendChild(t);
+
+    g.addEventListener('click', function(){ activate(i); });
+    g.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(i); } });
+
+    svg.appendChild(g);
+    nodeEls.push(g);
+  });
+
+  function activate(i){
+    nodeEls.forEach(function(el, idx){ el.classList.toggle('active', idx === i); });
+    svg.querySelectorAll('.lab-link').forEach(function(link){
+      var a = +link.getAttribute('data-a'), b = +link.getAttribute('data-b');
+      link.classList.toggle('active', a === i || b === i);
+    });
+    var node = LAB_NODES[i];
+    panel.innerHTML =
+      '<div class="tag">'+node.tag+'</div>'+
+      '<h3>'+node.title+'</h3>'+
+      '<p>'+node.body+'</p>'+
+      '<ul class="lab-list">'+ node.list.map(function(l){ return '<li>'+l+'</li>'; }).join('') +'</ul>';
+  }
+  activate(0);
+})();
+
+/* ============================================================
+   PROCESS — active step on scroll
+   ============================================================ */
+(function initProcess(){
+  var items = document.querySelectorAll('.process-item');
+  if (!items.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) entry.target.classList.add('active');
+      else entry.target.classList.remove('active');
+    });
+  }, {threshold:0.6});
+  items.forEach(function(el){ io.observe(el); });
+})();
+
+/* ============================================================
+   SKILLS — animate fill on view
+   ============================================================ */
+(function initSkills(){
+  var rows = document.querySelectorAll('.skill-row');
+  if (!rows.length) return;
+  var run = function(row){
+    var level = row.getAttribute('data-level');
+    row.querySelector('.skill-fill').style.width = level + '%';
+  };
+  if (!('IntersectionObserver' in window)){ rows.forEach(run); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){ run(entry.target); io.unobserve(entry.target); }
+    });
+  }, {threshold:0.4});
+  rows.forEach(function(r){ io.observe(r); });
+})();
+
+/* ============================================================
+   ACHIEVEMENTS — count up
+   ============================================================ */
+(function initCounters(){
+  var counters = document.querySelectorAll('.count');
+  if (!counters.length) return;
+  function animate(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduceMotion){ el.textContent = target + suffix; return; }
+    var start = 0, duration = 1200, startTime = null;
+    function step(ts){
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (!('IntersectionObserver' in window)){ counters.forEach(animate); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){ animate(entry.target); io.unobserve(entry.target); }
+    });
+  }, {threshold:0.5});
+  counters.forEach(function(c){ io.observe(c); });
+})();
+
+/* ============================================================
+   TESTIMONIALS — example feedback (anonymized, no real names)
+   ============================================================ */
+var TESTIMONIALS = [
+  { initials:'B', role:'Business Website Client', quote:'The site actually explains what we do in the first ten seconds — that alone fixed a problem our old website had for years.' },
+  { initials:'L', role:'Landing Page Client', quote:'Fast turnaround and every change I asked for was handled directly, no back and forth with anyone else.' },
+  { initials:'P', role:'Portfolio Client', quote:'It doesn\u2019t look like a template someone customized. It looks like it was actually built for me.' },
+  { initials:'S', role:'Startup Founder', quote:'Mobile version works exactly like the desktop one — no weird breakpoints, no overflow issues. Small thing, but it matters.' },
+  { initials:'E', role:'Service Business Owner', quote:'I sent one WhatsApp message and had a working draft to react to within days. Communication was the best part.' },
+  { initials:'O', role:'Optimization Client', quote:'The old site felt sluggish on mobile — after the rebuild it loads clean and nothing jumps around while scrolling.' }
+];
+(function initTestimonials(){
+  var grid = document.getElementById('testimonialsGrid');
+  if (!grid) return;
+  TESTIMONIALS.forEach(function(t, i){
+    var card = document.createElement('div');
+    card.className = 'testimonial-card reveal';
+    card.style.setProperty('--i', i);
+    card.innerHTML =
+      '<div class="testimonial-mark">&#8220;</div>'+
+      '<div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>'+
+      '<p class="testimonial-quote">'+t.quote+'</p>'+
+      '<div class="testimonial-foot">'+
+        '<div class="testimonial-avatar">'+t.initials+'</div>'+
+        '<div><div class="testimonial-name">Client</div><div class="testimonial-role">'+t.role+'</div></div>'+
+      '</div>';
+    grid.appendChild(card);
+  });
+  document.querySelectorAll('.testimonial-card').forEach(function(el){
+    if (reduceMotion){ el.classList.add('is-visible'); return; }
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){ entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+        });
+      }, {threshold:0.15});
+      io.observe(el);
+    } else { el.classList.add('is-visible'); }
+  });
+})();
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+(function initFaq(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    q.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(open){
+        if (open !== item){
+          open.classList.remove('open');
+          open.querySelector('.faq-q').setAttribute('aria-expanded','false');
+          open.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+      if (isOpen){
+        item.classList.remove('open');
+        q.setAttribute('aria-expanded','false');
+        a.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded','true');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+
+/* ============================================================
+   SERVICE CARDS -> CONTACT FORM SERVICE PREFILL
+   ============================================================ */
+(function initServiceLink(){
+  var hiddenInput = document.getElementById('cf-service');
+  var chips = document.querySelectorAll('.service-chip');
+
+  function selectService(name){
+    hiddenInput.value = name;
+    chips.forEach(function(c){ c.classList.toggle('selected', c.textContent.trim() === name); });
+  }
+
+  document.querySelectorAll('.service-card').forEach(function(card){
+    card.querySelector('.service-link').addEventListener('click', function(){
+      selectService(card.getAttribute('data-service'));
+    });
+  });
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){ selectService(chip.textContent.trim()); });
+  });
+})();
+
+/* ============================================================
+   CONTACT FORM -> WHATSAPP HANDOFF
+   ============================================================ */
+(function initContactForm(){
+  var form = document.getElementById('contactForm');
+  var note = document.getElementById('formNote');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    var email = document.getElementById('cf-email').value.trim();
+    var service = document.getElementById('cf-service').value || 'Not specified';
+    var message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email || !message){
+      note.textContent = 'Please fill in your name, email and message.';
+      note.className = 'form-note show';
+      return;
+    }
+
+    var text = 'Hello Frasat, I want to start a NexGen Project.%0A%0AName: ' + encodeURIComponent(name) +
+      '%0AEmail: ' + encodeURIComponent(email) +
+      '%0AService: ' + encodeURIComponent(service) +
+      '%0AMessage: ' + encodeURIComponent(message);
+    var url = 'https://wa.me/923468823902?text=' + text;
+
+    note.textContent = 'Opening WhatsApp with your enquiry...';
+    note.className = 'form-note show ok';
+    window.open(url, '_blank', 'noopener');
+    form.reset();
+    document.querySelectorAll('.service-chip.selected').forEach(function(c){ c.classList.remove('selected'); });
+  });
+})();
+
+/* Footer year */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
 </script>
 </body>
 </html>
