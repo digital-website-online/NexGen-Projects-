@@ -1186,9 +1186,18 @@ footer{padding:64px 0 32px;border-top:1px solid var(--line);}
 @media (max-width:480px){
   .footer-grid{grid-template-columns:1fr;}
 }
+
+/* NEXGEN MOBILE/MENU FIX */
+html,body{width:100%;max-width:100%;overflow-x:hidden}body{overscroll-behavior-x:none}a,button,.btn,.menu{-webkit-tap-highlight-color:transparent}button:focus:not(:focus-visible),a:focus:not(:focus-visible){outline:none}:focus-visible{outline:2px solid var(--cyan,#63e6ff);outline-offset:3px}
+#nx-scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:99999;pointer-events:none}#nx-scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#28d9ff,#63e6ff,#9675ff);box-shadow:0 0 14px rgba(99,230,255,.7)}
+.menu{position:relative;width:44px;height:44px;display:none;align-items:center;justify-content:center;font-size:0;z-index:1101}.menu::before,.menu::after,.menu span{content:"";position:absolute;width:25px;height:2px;border-radius:10px;background:#fff;transition:transform .38s cubic-bezier(.22,1,.36,1),top .38s cubic-bezier(.22,1,.36,1),opacity .18s ease}.menu::before{top:11px}.menu span{top:21px}.menu::after{top:31px}.menu.is-open::before{top:21px;transform:rotate(45deg)}.menu.is-open span{opacity:0}.menu.is-open::after{top:21px;transform:rotate(-45deg)}
+.nx-reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}.nx-reveal.nx-visible{opacity:1;transform:none}
+@media(max-width:650px){body.nx-menu-lock{overflow:hidden;touch-action:none}.menu{display:flex}.nav-links{left:4%!important;right:4%!important;width:auto!important;max-width:92vw!important;box-sizing:border-box;transform-origin:top center;transition:opacity .3s ease,transform .38s cubic-bezier(.22,1,.36,1),visibility .3s ease!important}.nav-links:not(.open){opacity:0;visibility:hidden;transform:translateY(-10px) scale(.98)!important;pointer-events:none}.nav-links.open{opacity:1;visibility:visible;transform:none!important;pointer-events:auto}.nav-links li{width:100%}.nav-links a{width:100%;display:block}}
+@media(prefers-reduced-motion:reduce){.nx-reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<div id="nx-scroll-progress" aria-hidden="true"><span></span></div>
 
 <!-- LOADER -->
 <div id="loader" aria-hidden="true">
@@ -2410,5 +2419,5 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 })();
 </script>
-</body>
+<script>(function(){var m=document.getElementById("menu"),n=document.getElementById("navLinks");function c(){if(!m||!n)return;m.classList.remove("is-open");n.classList.remove("open");m.setAttribute("aria-expanded","false");m.setAttribute("aria-label","Open menu");document.body.classList.remove("nx-menu-lock")}if(m&&n){m.setAttribute("role","button");m.setAttribute("tabindex","0");m.setAttribute("aria-expanded","false");m.setAttribute("aria-label","Open menu");function t(){var o=!m.classList.contains("is-open");m.classList.toggle("is-open",o);n.classList.toggle("open",o);m.setAttribute("aria-expanded",o);m.setAttribute("aria-label",o?"Close menu":"Open menu");document.body.classList.toggle("nx-menu-lock",o&&innerWidth<=650)}m.addEventListener("click",t);m.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();t()}});n.querySelectorAll("a").forEach(function(a){a.addEventListener("click",c)});document.addEventListener("keydown",function(e){if(e.key==="Escape")c()});document.addEventListener("click",function(e){if(innerWidth<=650&&n.classList.contains("open")&&!n.contains(e.target)&&!m.contains(e.target))c()});addEventListener("resize",function(){if(innerWidth>650)document.body.classList.remove("nx-menu-lock")})}var b=document.querySelector("#nx-scroll-progress span");function pr(){var x=document.documentElement.scrollHeight-innerHeight;b.style.width=(x?Math.max(0,Math.min(100,scrollY/x*100)):0)+"%"}addEventListener("scroll",pr,{passive:true});pr();if("IntersectionObserver"in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("nx-visible");io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll("section,.card,.step,.stat,.about-art,.hero-card,.contact-wrap").forEach(function(e){e.classList.add("nx-reveal");io.observe(e)})}})();</script></body>
 </html>
